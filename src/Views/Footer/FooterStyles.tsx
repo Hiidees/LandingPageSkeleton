@@ -33,6 +33,7 @@ export const MyListItemIcon = styled(ListItemIcon)({
   color: "#d1dffb",
   minWidth: "0px",
   padding: "8px 16px",
+  "&:hover": { color: "#042057" },
 });
 
 export const MyDivider = styled(Divider)({

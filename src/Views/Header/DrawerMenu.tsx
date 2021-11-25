@@ -50,7 +50,7 @@ export default function DrawerMenu() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List sx={{ color: "white" }}>
-        <ListItem button disabled>
+        <ListItem>
           <ListItemIcon></ListItemIcon>
           <ListItemText primary={"My name"} />
         </ListItem>
@@ -69,7 +69,11 @@ export default function DrawerMenu() {
             <React.Fragment>
               <ListItem button key={text}>
                 <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {index % 2 === 0 ? (
+                    <InboxIcon sx={{ color: "#acc7fe" }} />
+                  ) : (
+                    <MailIcon sx={{ color: "#acc7fe" }} />
+                  )}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
@@ -91,7 +95,12 @@ export default function DrawerMenu() {
         {matches && (
           <React.Fragment>
             <ListItemIcon
-              sx={{ color: "#acc7fe", minWidth: "0px", padding: "8px 16px" }}
+              sx={{
+                color: "#acc7fe",
+                minWidth: "0px",
+                padding: "8px 16px",
+                "&:hover": { color: "#042057" },
+              }}
             >
               <InstagramIcon />
             </ListItemIcon>
@@ -104,7 +113,12 @@ export default function DrawerMenu() {
             />
 
             <ListItemIcon
-              sx={{ color: "#acc7fe", minWidth: "0px", padding: "8px 16px" }}
+              sx={{
+                color: "#acc7fe",
+                minWidth: "0px",
+                padding: "8px 16px",
+                "&:hover": { color: "#042057" },
+              }}
             >
               <FacebookOutlinedIcon />
             </ListItemIcon>
@@ -116,7 +130,12 @@ export default function DrawerMenu() {
               sx={{ backgroundColor: "#acc7fe" }}
             />
             <ListItemIcon
-              sx={{ color: "#acc7fe", minWidth: "0px", padding: "8px 16px" }}
+              sx={{
+                color: "#acc7fe",
+                minWidth: "0px",
+                padding: "8px 16px",
+                "&:hover": { color: "#042057" },
+              }}
             >
               <BluetoothConnectedOutlinedIcon />
             </ListItemIcon>
