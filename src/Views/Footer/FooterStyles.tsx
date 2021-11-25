@@ -1,22 +1,10 @@
-import { Box, styled } from "@mui/system";
-import {
-  AppBar,
-  Button,
-  Divider,
-  Drawer,
-  IconButton,
-  List,
-  ListItemIcon,
-  StackProps,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import React from "react";
-
-type ExtraProps = {
-  component: React.ElementType;
-  propsStack: StackProps;
-};
+import AppBar from "@mui/material/AppBar";
+import Divider from "@mui/material/Divider";
+import List from "@mui/material/List";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { styled } from "@mui/system";
 
 export const MyFooter = styled(AppBar)({
   background: "transparent",
@@ -42,4 +30,8 @@ export const MyDivider = styled(Divider)({
 
 export const MyTypography = styled(Typography)({
   textAlign: "center",
+});
+
+export const MyList = styled(List)<any>({
+  justifyContent: "center",
 });

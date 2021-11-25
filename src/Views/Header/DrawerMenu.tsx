@@ -1,8 +1,6 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Button from "@mui/material/Button";
-import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -15,6 +13,15 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import BluetoothConnectedOutlinedIcon from "@mui/icons-material/BluetoothConnectedOutlined";
 import { Stack } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import {
+  MyBox,
+  MyDivider,
+  MyListItemIconSocial,
+  MyListLink,
+  MyListName,
+  MyListSocial,
+  MyListItemButton,
+} from "./HeaderStyle";
 
 type Anchor = "left";
 
@@ -41,108 +48,54 @@ export default function DrawerMenu() {
     };
 
   const list = (anchor: Anchor) => (
-    <Box
-      sx={{
-        width: 250,
-      }}
+    <MyBox
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List sx={{ color: "white" }}>
+      <MyListName>
         <ListItem>
           <ListItemIcon></ListItemIcon>
           <ListItemText primary={"My name"} />
         </ListItem>
-      </List>
+      </MyListName>
       <Divider variant="middle" sx={{ backgroundColor: "#acc7fe" }} />
-      <List
-        sx={{
-          marginTop: 2,
-          color: "white",
-          height: "auto",
-          marginBottom: "auto",
-        }}
-      >
+      <MyListLink>
         {["Home", "Contact me", "About me", "My Curriculum"].map(
           (text, index) => (
             <React.Fragment>
-              <ListItem button key={text}>
+              <MyListItemButton button key={text}>
                 <ListItemIcon>
-                  {index % 2 === 0 ? (
-                    <InboxIcon sx={{ color: "#acc7fe" }} />
-                  ) : (
-                    <MailIcon sx={{ color: "#acc7fe" }} />
-                  )}
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
-              </ListItem>
+              </MyListItemButton>
             </React.Fragment>
           )
         )}
-      </List>
+      </MyListLink>
 
-      <List
-        component={Stack}
-        sx={{
-          color: "white",
-          position: "absolute",
-          bottom: 0,
-          marginLeft: 5,
-        }}
-        direction="row"
-      >
+      <MyListSocial component={Stack} direction="row">
         {matches && (
           <React.Fragment>
-            <ListItemIcon
-              sx={{
-                color: "#acc7fe",
-                minWidth: "0px",
-                padding: "8px 16px",
-                "&:hover": { color: "#042057" },
-              }}
-            >
+            <MyListItemIconSocial>
               <InstagramIcon />
-            </ListItemIcon>
+            </MyListItemIconSocial>
 
-            <Divider
-              orientation="vertical"
-              variant="middle"
-              flexItem
-              sx={{ backgroundColor: "#acc7fe" }}
-            />
+            <MyDivider orientation="vertical" variant="middle" flexItem />
 
-            <ListItemIcon
-              sx={{
-                color: "#acc7fe",
-                minWidth: "0px",
-                padding: "8px 16px",
-                "&:hover": { color: "#042057" },
-              }}
-            >
+            <MyListItemIconSocial>
               <FacebookOutlinedIcon />
-            </ListItemIcon>
+            </MyListItemIconSocial>
 
-            <Divider
-              orientation="vertical"
-              variant="middle"
-              flexItem
-              sx={{ backgroundColor: "#acc7fe" }}
-            />
-            <ListItemIcon
-              sx={{
-                color: "#acc7fe",
-                minWidth: "0px",
-                padding: "8px 16px",
-                "&:hover": { color: "#042057" },
-              }}
-            >
+            <MyDivider orientation="vertical" variant="middle" flexItem />
+            <MyListItemIconSocial>
               <BluetoothConnectedOutlinedIcon />
-            </ListItemIcon>
+            </MyListItemIconSocial>
           </React.Fragment>
         )}
-      </List>
-    </Box>
+      </MyListSocial>
+    </MyBox>
   );
 
   return (

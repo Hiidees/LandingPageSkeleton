@@ -7,7 +7,10 @@ import {
   Card,
   CardContent,
   Grid,
+  IconButton,
 } from "@mui/material";
+import Box from "@mui/material/Box";
+import CardMedia from "@mui/material/CardMedia";
 
 export default function Home() {
   return (
@@ -15,16 +18,22 @@ export default function Home() {
       <Container maxWidth="md" disableGutters>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12} md={12}>
-            <Card sx={{ background: "transparent" }} elevation={0}>
-              <CardHeader
-                sx={{
-                  color: "#d1dffb",
-                }}
-                avatar={<Avatar aria-label="Ciao"></Avatar>}
-                title="Home"
-              />
-              <CardContent>
-                <Typography variant="body2" color="#d1dffb">
+            <Card
+              sx={{ background: "transparent", display: "flex" }}
+              elevation={0}
+            >
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <CardMedia
+                  component="img"
+                  sx={{ width: 200 }}
+                  image="/Home.png"
+                  alt="Home"
+                  title="Home"
+                />
+              </Box>
+
+              <CardContent sx={{ marginTop: 3 }}>
+                <Typography variant="body1" color="#d1dffb">
                   Laborum tempor id duis exercitation do enim sint enim dolore
                   anim Lorem laborum cillum nulla. Sint enim anim nulla cillum
                   et eiusmod nisi. Officia ad est magna irure aliquip ullamco
@@ -38,16 +47,22 @@ export default function Home() {
           </Grid>
 
           <Grid item xs={12} sm={12} md={12}>
-            <Card sx={{ background: "transparent" }} elevation={0}>
-              <CardHeader
-                avatar={<Avatar aria-label="Ciao"></Avatar>}
-                title="Contact me"
-                sx={{
-                  color: "#d1dffb",
-                }}
-              />
-              <CardContent>
-                <Typography variant="body2" color="#d1dffb">
+            <Card
+              sx={{ background: "transparent", display: "flex" }}
+              elevation={0}
+            >
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <CardMedia
+                  component="img"
+                  sx={{ width: 200 }}
+                  image="/Contact.png"
+                  alt="Contact me"
+                  title="Contact me"
+                />
+              </Box>
+
+              <CardContent sx={{ marginTop: 3 }}>
+                <Typography variant="body1" color="#d1dffb">
                   Laborum tempor id duis exercitation do enim sint enim dolore
                   anim Lorem laborum cillum nulla. Sint enim anim nulla cillum
                   et eiusmod nisi. Officia ad est magna irure aliquip ullamco
@@ -61,16 +76,22 @@ export default function Home() {
           </Grid>
 
           <Grid item xs={12} sm={12} md={12}>
-            <Card sx={{ background: "transparent" }} elevation={0}>
-              <CardHeader
-                avatar={<Avatar aria-label="Ciao"></Avatar>}
-                title="About me"
-                sx={{
-                  color: "#d1dffb",
-                }}
-              />
-              <CardContent>
-                <Typography variant="body2" color="#d1dffb">
+            <Card
+              sx={{ background: "transparent", display: "flex" }}
+              elevation={0}
+            >
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <CardMedia
+                  component="img"
+                  sx={{ width: 200 }}
+                  image="/Aboutme.png"
+                  alt="About me"
+                  title="About me"
+                />
+              </Box>
+
+              <CardContent sx={{ marginTop: 3 }}>
+                <Typography variant="body1" color="#d1dffb">
                   Laborum tempor id duis exercitation do enim sint enim dolore
                   anim Lorem laborum cillum nulla. Sint enim anim nulla cillum
                   et eiusmod nisi. Officia ad est magna irure aliquip ullamco
@@ -84,16 +105,22 @@ export default function Home() {
           </Grid>
 
           <Grid item xs={12} sm={12} md={12}>
-            <Card sx={{ background: "transparent" }} elevation={0}>
-              <CardHeader
-                avatar={<Avatar aria-label="Ciao"></Avatar>}
-                title="My Curriculum"
-                sx={{
-                  color: "#d1dffb",
-                }}
-              />
-              <CardContent>
-                <Typography variant="body2" color="#d1dffb">
+            <Card
+              sx={{ background: "transparent", display: "flex" }}
+              elevation={0}
+            >
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <CardMedia
+                  component="img"
+                  sx={{ width: 200 }}
+                  image="/Portfolio.png"
+                  alt="My Portfolio"
+                  title="My Portfolio"
+                />
+              </Box>
+
+              <CardContent sx={{ marginTop: 3 }}>
+                <Typography variant="body1" color="#d1dffb">
                   Laborum tempor id duis exercitation do enim sint enim dolore
                   anim Lorem laborum cillum nulla. Sint enim anim nulla cillum
                   et eiusmod nisi. Officia ad est magna irure aliquip ullamco

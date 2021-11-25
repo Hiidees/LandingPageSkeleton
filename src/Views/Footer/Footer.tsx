@@ -1,4 +1,3 @@
-import { Box, Container, List, Stack, Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
@@ -10,7 +9,11 @@ import {
   MyListItemIcon,
   MyDivider,
   MyTypography,
+  MyList,
 } from "./FooterStyles";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
 
 export interface IFooterProps {}
 
@@ -24,13 +27,7 @@ export function Footer(props: IFooterProps) {
           <Container maxWidth="md">
             <MyToolbar variant="dense">
               <Box>
-                <List
-                  component={Stack}
-                  sx={{
-                    justifyContent: "center",
-                  }}
-                  direction="row"
-                >
+                <MyList component={Stack} direction="row">
                   <MyListItemIcon>
                     <InstagramIcon />
                   </MyListItemIcon>
@@ -45,7 +42,7 @@ export function Footer(props: IFooterProps) {
                   <MyListItemIcon>
                     <BluetoothConnectedOutlinedIcon />
                   </MyListItemIcon>
-                </List>
+                </MyList>
               </Box>
 
               <MyTypography color="inherit">
