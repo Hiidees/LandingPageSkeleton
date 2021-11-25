@@ -1,14 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { GlobalStyles } from "@mui/material";
+import React from "react";
+import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
+import { ThemeProvider } from "@mui/material/styles";
+import MainTheme from "./Theme/MainTheme";
+import RouteProvider from "./Provider/RouteProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={MainTheme}>
+      <GlobalStyles
+        styles={{
+          body: {
+            backgroundColor: "#e5eaf4",
+            backgroundImage: "url(" + "/Blue.jpg" + ")",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          },
+        }}
+      />
+      <RouteProvider />
+    </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
