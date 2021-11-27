@@ -1,3 +1,4 @@
+import CircularProgress from "@mui/material/CircularProgress";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -5,7 +6,6 @@ import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import Paper from "@mui/material/Paper";
 import Toolbar from "@mui/material/Toolbar";
 import { styled } from "@mui/system";
 
@@ -68,5 +68,16 @@ export const MyToolbarSmall = styled(Toolbar)({
 });
 
 export const MyButtonAppBar = styled(Button)({
-  "&:hover": { background: "none", color: "#042057" },
+  "&:hover": {
+    background: "none",
+    color: "#042057",
+    textDecoration: "underline",
+    textUnderlineOffset: 10,
+  },
+});
+
+export const MyCircularProgress = styled(CircularProgress)({
+  padding: "20px",
+  margin: "20px",
+  color: "#d1dffb",
 });

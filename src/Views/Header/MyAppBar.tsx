@@ -1,6 +1,4 @@
-import { Box, Button } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Toolbar from "@mui/material/Toolbar";
 import DrawerMenu from "./DrawerMenu";
 import {
   AppBarStyle,
@@ -26,7 +24,7 @@ export function MyAppBar(props: IAppBarProps) {
               <MyButtonAppBar color="inherit">My Portfolio</MyButtonAppBar>
             </MyToolbarLarge>
           ) : (
-            <MyToolbarSmall sx={{ justifyContent: "right" }}>
+            <MyToolbarSmall>
               <DrawerMenu />
             </MyToolbarSmall>
           )}
