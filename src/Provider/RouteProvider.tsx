@@ -7,7 +7,6 @@ export default function RouteProvider() {
   return (
     <React.Fragment>
       <BrowserRouter>
-        <ParticlesComponent />
         <Switch>
           <Route exact path="/" component={HomeProvider} />
         </Switch>

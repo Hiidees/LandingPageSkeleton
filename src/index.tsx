@@ -12,7 +12,6 @@ ReactDOM.render(
       <GlobalStyles
         styles={{
           body: {
-            backgroundColor: "#e5eaf4",
             backgroundImage: "url(" + "/Blue.jpg" + ")",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",

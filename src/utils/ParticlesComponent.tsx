@@ -1,12 +1,27 @@
+import { useMediaQuery } from "@mui/material";
+import { useEffect, useState } from "react";
 import Particles from "react-tsparticles";
 import "./Particles.css";
 export default function ParticlesComponent() {
+  const [height, setHeight] = useState('');
+
+  useEffect(() => {
+    function handleResize(): void {
+      setHeight(document.body.scrollHeight + "px");
+    }
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return (): void => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <Particles
+      height={height}
       canvasClassName="example"
-      height="120px"
-      width="300px"
       options={{
+        fullScreen: { enable: false },
         fpsLimit: 60,
         interactivity: {
           modes: {
