@@ -14,8 +14,9 @@ export function CardContent(props: IMyCardContentProps) {
   return (
     <Grid item xs={12} sm={12} md={12}>
       <MyCard sx={{ display: { xs: "block", sm: "flex" } }} elevation={0}>
-        <BoxMedia sx={{ marginLeft: { xs: 15, sm: 0 } }}>
+        <BoxMedia>
           <MyCardMedia
+            sx={{ margin: { xs: "0 auto" } }}
             component="img"
             image={imageUrl}
             alt={alt}

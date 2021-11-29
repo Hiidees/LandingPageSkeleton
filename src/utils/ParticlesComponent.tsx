@@ -3,17 +3,17 @@ import { useEffect, useState } from "react";
 import Particles from "react-tsparticles";
 import "./Particles.css";
 export default function ParticlesComponent() {
-  const [height, setHeight] = useState('');
+  const [height, setHeight] = useState("");
 
   useEffect(() => {
     function handleResize(): void {
       setHeight(document.body.scrollHeight + "px");
     }
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     handleResize();
 
-    return (): void => window.removeEventListener('resize', handleResize);
+    return (): void => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -24,6 +24,7 @@ export default function ParticlesComponent() {
         fullScreen: { enable: false },
         fpsLimit: 60,
         interactivity: {
+          detect_on: "window",
           modes: {
             bubble: {
               distance: 400,

@@ -105,7 +105,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
                   <React.Fragment>
                     <MyListItemButton
                       key={text}
-                      onclick={() => handleDrawerClick(text)}
+                      onClick={() => handleDrawerClick(text)}
                     >
                       <ListItemIcon>
                         <MailIcon />
