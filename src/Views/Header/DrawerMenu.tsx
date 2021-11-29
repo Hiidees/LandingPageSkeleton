@@ -43,9 +43,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
   } = props;
   const matches = useMediaQuery("(min-height:600px)");
 
-  const [state, setState] = React.useState({
-    left: false,
-  });
+  const [state, setState] = React.useState(false);
 
   function handleDrawerClick(text: string) {
     console.log("Ciao1");
@@ -68,10 +66,8 @@ export default function DrawerMenu(props: IDrawerMenu) {
   }
 
   const toggleDrawer =
-    (anchor: Anchor, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
+    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
-        event &&
         event.type === "keydown" &&
         ((event as React.KeyboardEvent).key === "Tab" ||
           (event as React.KeyboardEvent).key === "Shift")
@@ -79,14 +75,14 @@ export default function DrawerMenu(props: IDrawerMenu) {
         return;
       }
 
-      setState({ ...state, [anchor]: open });
+      setState(open);
     };
 
   const list = (anchor: Anchor) => (
     <MyBox
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
     >
       <MyListName>
         <ListItem>
@@ -147,7 +143,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
           <Button
             color="inherit"
             startIcon={<MenuIcon />}
-            onClick={toggleDrawer(anchor, true)}
+            onClick={toggleDrawer(true)}
             sx={{
               display: { sm: "none", md: "none" },
               "&:hover": {
@@ -161,7 +157,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
 
           <SwipeableDrawer
             anchor={anchor}
-            open={state[anchor]}
+            open={state}
             PaperProps={{
               sx: {
                 backgroundColor: "rgb(13,83,178)",
@@ -171,8 +167,8 @@ export default function DrawerMenu(props: IDrawerMenu) {
               },
             }}
             sx={{ display: { sm: "none", md: "none" } }}
-            onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
+            onClose={toggleDrawer(false)}
+            onOpen={toggleDrawer(true)}
           >
             {list(anchor)}
           </SwipeableDrawer>
