@@ -1,8 +1,8 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
-import { CardSkeleton } from "./CardSkeleton";
-import { CardContent } from "./CardContent";
+import { CardSkeleton } from "../FrontEndUtils/CardSkeleton";
+import { CardContent } from "../FrontEndUtils/CardContent";
 
 export default function Home() {
   const [refresh, setRefresh] = useState(false);

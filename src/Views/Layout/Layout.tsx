@@ -9,6 +9,7 @@ interface ILayoutProps {
   onClickMM: () => void;
   onClickAltriProgetti: () => void;
   onClickContact: () => void;
+  handleDrawerClick: (text: string) => void;
 }
 
 export default function Layout(props: React.PropsWithChildren<ILayoutProps>) {
@@ -18,6 +19,7 @@ export default function Layout(props: React.PropsWithChildren<ILayoutProps>) {
     onClickMM,
     onClickAltriProgetti,
     onClickContact,
+    handleDrawerClick,
   } = props;
   return (
     <div>
@@ -28,6 +30,7 @@ export default function Layout(props: React.PropsWithChildren<ILayoutProps>) {
         onClickMM={onClickMM}
         onClickAltriProgetti={onClickAltriProgetti}
         onClickContact={onClickContact}
+        handleDrawerClick={handleDrawerClick}
       />
 
       <Container maxWidth="md">{props.children}</Container>

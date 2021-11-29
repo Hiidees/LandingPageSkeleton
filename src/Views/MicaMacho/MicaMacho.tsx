@@ -1,12 +1,47 @@
-import * as React from "react";
-import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import React, { useEffect, useState } from "react";
+import { CardSkeleton } from "../FrontEndUtils/CardSkeleton";
+import { CardContent } from "../FrontEndUtils/CardContent";
 
 export interface IMicaMachoProps {}
 
 export default function MicaMacho(props: IMicaMachoProps) {
+  const [refresh, setRefresh] = useState(false);
+
+  async function Refresh() {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    setRefresh(true);
+  }
+
+  useEffect(() => {
+    Refresh();
+  }, []);
   return (
-    <Typography variant="h1" color="initial">
-      Mica Macho
-    </Typography>
+    <React.Fragment>
+      <Container
+        maxWidth="md"
+        disableGutters
+        sx={{ display: refresh ? "block" : " none" }}
+      >
+        <Grid container spacing={2}>
+          <CardContent
+            imageUrl="/Contact.png"
+            alt="Mica Macho"
+            title="Mica Macho"
+          />
+        </Grid>
+      </Container>
+
+      <Container
+        maxWidth="md"
+        disableGutters
+        sx={{ display: refresh ? "none" : " block" }}
+      >
+        <Grid container spacing={2}>
+          <CardSkeleton />
+        </Grid>
+      </Container>
+    </React.Fragment>
   );
 }

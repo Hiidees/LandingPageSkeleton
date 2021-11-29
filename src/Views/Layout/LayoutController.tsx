@@ -28,6 +28,26 @@ export function LayoutController(
     history.push("/contatti");
   }
 
+  function handleDrawerClick(text: string) {
+    console.log("Ciao1");
+    if (text === "Home") {
+      console.log("Ciao2");
+      onClickHome();
+    }
+    if (text === "Digital Marketing") {
+      onClickDM();
+    }
+    if (text === "Mica Macho") {
+      onClickMM();
+    }
+    if (text === "AltriProgetti") {
+      onClickAltriProgetti();
+    }
+    if (text === "Contatti") {
+      onClickContact();
+    }
+  }
+
   return (
     <Layout
       onClickHome={onClickHome}
@@ -35,6 +55,7 @@ export function LayoutController(
       onClickMM={onClickMM}
       onClickAltriProgetti={onClickAltriProgetti}
       onClickContact={onClickContact}
+      handleDrawerClick={handleDrawerClick}
     >
       {props.children}
     </Layout>

@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { BoxMedia, MyCard, MyCardContent, MyCardMedia } from "./HomeStyles";
+import { BoxMedia, MyCard, MyCardContent, MyCardMedia } from "./CardStyles";
 
 export interface IMyCardContentProps {
   imageUrl: string;

@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid";
 import Skeleton from "@mui/material/Skeleton";
 import Box from "@mui/system/Box";
 import React from "react";
-import { BoxMedia, MyCard, MyCardContent } from "./HomeStyles";
+import { BoxMedia, MyCard, MyCardContent } from "./CardStyles";
 
 function SkeletonTypography() {
   return (

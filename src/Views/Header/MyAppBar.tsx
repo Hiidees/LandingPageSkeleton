@@ -15,6 +15,7 @@ export interface IAppBarProps {
   onClickMM: () => void;
   onClickAltriProgetti: () => void;
   onClickContact: () => void;
+  handleDrawerClick: (text: string) => void;
 }
 
 export function MyAppBar(props: IAppBarProps) {
@@ -25,6 +26,7 @@ export function MyAppBar(props: IAppBarProps) {
     onClickMM,
     onClickAltriProgetti,
     onClickContact,
+    handleDrawerClick,
   } = props;
   return (
     <div>
@@ -70,13 +72,7 @@ export function MyAppBar(props: IAppBarProps) {
             </MyToolbarLarge>
           ) : (
             <MyToolbarSmall>
-              <DrawerMenu
-                onClickHome={onClickHome}
-                onClickDM={onClickDM}
-                onClickMM={onClickMM}
-                onClickAltriProgetti={onClickAltriProgetti}
-                onClickContact={onClickContact}
-              />
+              <DrawerMenu handleDrawerClick={handleDrawerClick} />
             </MyToolbarSmall>
           )}
         </AppBarStyle>

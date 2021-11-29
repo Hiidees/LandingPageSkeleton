@@ -1,12 +1,26 @@
-import * as React from "react";
-import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import React from "react";
+import Box from "@mui/material/Box";
 
 export interface INotFoundProps {}
 
 export default function NotFound(props: INotFoundProps) {
   return (
-    <Typography variant="h1" color="initial">
-      404- Not Found
-    </Typography>
+    <React.Fragment>
+      <Container maxWidth="md" disableGutters>
+        <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+          <Box
+            component="img"
+            sx={{
+              maxHeight: { xs: 400, md: 500 },
+              maxWidth: { xs: 400, md: 500 },
+            }}
+            alt="The house from the offer."
+            src="/404.png"
+          />
+        </Grid>
+      </Container>
+    </React.Fragment>
   );
 }
