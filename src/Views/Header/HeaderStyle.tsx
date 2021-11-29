@@ -8,6 +8,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Toolbar from "@mui/material/Toolbar";
 import { styled } from "@mui/system";
+import ListItemButton from "@mui/material/ListItemButton";
 
 export const MyBox = styled(Box)({
   width: 250,
@@ -24,7 +25,7 @@ export const MyListLink = styled(List)({
   marginBottom: "auto",
 });
 
-export const MyListItemButton = styled(ListItem)<any>({
+export const MyListItemButton = styled(ListItemButton)<any>({
   "&:hover": {
     color: "black",
     backgroundColor: "#acc7fe",

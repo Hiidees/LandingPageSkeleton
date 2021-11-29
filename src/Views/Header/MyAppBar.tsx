@@ -1,4 +1,5 @@
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { useState } from "react";
 import DrawerMenu from "./DrawerMenu";
 import {
   AppBarStyle,
@@ -8,24 +9,74 @@ import {
   MyButtonAppBar,
 } from "./HeaderStyle";
 
-export interface IAppBarProps {}
+export interface IAppBarProps {
+  onClickHome: () => void;
+  onClickDM: () => void;
+  onClickMM: () => void;
+  onClickAltriProgetti: () => void;
+  onClickContact: () => void;
+}
 
 export function MyAppBar(props: IAppBarProps) {
   const matches = useMediaQuery("(min-width:600px)");
+  const {
+    onClickHome,
+    onClickDM,
+    onClickMM,
+    onClickAltriProgetti,
+    onClickContact,
+  } = props;
   return (
     <div>
       <MyBoxAppbar>
         <AppBarStyle position="static">
           {matches ? (
             <MyToolbarLarge>
-              <MyButtonAppBar color="inherit">Home</MyButtonAppBar>
-              <MyButtonAppBar color="inherit">Contact me</MyButtonAppBar>
-              <MyButtonAppBar color="inherit">About me</MyButtonAppBar>
-              <MyButtonAppBar color="inherit">My Portfolio</MyButtonAppBar>
+              <MyButtonAppBar
+                color="inherit"
+                disabled={window.location.pathname === "/"}
+                onClick={() => onClickHome()}
+              >
+                Home
+              </MyButtonAppBar>
+              <MyButtonAppBar
+                color="inherit"
+                disabled={window.location.pathname === "/digitalmarketing"}
+                onClick={() => onClickDM()}
+              >
+                Digital Marketing
+              </MyButtonAppBar>
+              <MyButtonAppBar
+                color="inherit"
+                disabled={window.location.pathname === "/micamacho"}
+                onClick={() => onClickMM()}
+              >
+                Mica Macho
+              </MyButtonAppBar>
+              <MyButtonAppBar
+                color="inherit"
+                disabled={window.location.pathname === "/altriprogetti"}
+                onClick={() => onClickAltriProgetti()}
+              >
+                Altri Progetti
+              </MyButtonAppBar>
+              <MyButtonAppBar
+                color="inherit"
+                disabled={window.location.pathname === "/contatti"}
+                onClick={() => onClickContact()}
+              >
+                Contatti
+              </MyButtonAppBar>
             </MyToolbarLarge>
           ) : (
             <MyToolbarSmall>
-              <DrawerMenu />
+              <DrawerMenu
+                onClickHome={onClickHome}
+                onClickDM={onClickDM}
+                onClickMM={onClickMM}
+                onClickAltriProgetti={onClickAltriProgetti}
+                onClickContact={onClickContact}
+              />
             </MyToolbarSmall>
           )}
         </AppBarStyle>

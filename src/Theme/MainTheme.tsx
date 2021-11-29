@@ -1,6 +1,12 @@
 import { createTheme } from "@mui/material";
 
 export default createTheme({
+  palette: {
+    action: {
+      disabled: "#7b8cac",
+    },
+  },
+
   components: {
     MuiContainer: {
       styleOverrides: {

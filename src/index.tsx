@@ -14,8 +14,6 @@ ReactDOM.render(
           body: {
             backgroundImage: "url(" + "/Blue.jpg" + ")",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
           },
         }}
       />
