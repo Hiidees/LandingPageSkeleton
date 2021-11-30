@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
 import { CardSkeleton } from "../FrontEndUtils/CardSkeleton";
 import { CardContent } from "../FrontEndUtils/CardContent";
+import { MyHelmet } from "../FrontEndUtils/MyHelmet";
 
 export interface IContattiProps {}
 
@@ -19,6 +20,7 @@ export default function Contatti(props: IContattiProps) {
   }, []);
   return (
     <React.Fragment>
+      <MyHelmet title={"Contatti"} />
       <Container
         maxWidth="md"
         disableGutters

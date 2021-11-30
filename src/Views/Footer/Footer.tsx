@@ -6,7 +6,7 @@ import React from "react";
 import {
   MyFooter,
   MyToolbar,
-  MyListItemIcon,
+  MyIconButton,
   MyDivider,
   MyTypography,
   MyList,
@@ -29,20 +29,20 @@ export function Footer(props: IFooterProps) {
             <MyToolbar variant="dense">
               <Box>
                 <MyList component={Stack} direction="row">
-                  <MyListItemIcon>
+                  <MyIconButton disableRipple>
                     <InstagramIcon />
-                  </MyListItemIcon>
+                  </MyIconButton>
 
                   <MyDivider orientation="vertical" variant="middle" flexItem />
 
-                  <MyListItemIcon>
+                  <MyIconButton disableRipple>
                     <FacebookOutlinedIcon />
-                  </MyListItemIcon>
+                  </MyIconButton>
 
                   <MyDivider orientation="vertical" variant="middle" flexItem />
-                  <MyListItemIcon>
+                  <MyIconButton disableRipple>
                     <LinkedInIcon />
-                  </MyListItemIcon>
+                  </MyIconButton>
                 </MyList>
               </Box>
 

@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
 import { CardSkeleton } from "../FrontEndUtils/CardSkeleton";
 import { CardContent } from "../FrontEndUtils/CardContent";
+import { MyHelmet } from "../FrontEndUtils/MyHelmet";
 export interface IAltriProgettiProps {}
 
 export default function AltriProgetti(props: IAltriProgettiProps) {
@@ -18,6 +19,7 @@ export default function AltriProgetti(props: IAltriProgettiProps) {
   }, []);
   return (
     <React.Fragment>
+      <MyHelmet title={"Altri Progetti"} />
       <Container
         maxWidth="md"
         disableGutters

@@ -1,7 +1,7 @@
 import AppBar from "@mui/material/AppBar";
 import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
-import ListItemIcon from "@mui/material/ListItemIcon";
+import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/system";
@@ -17,7 +17,7 @@ export const MyToolbar = styled(Toolbar)({
   display: "block",
 });
 
-export const MyListItemIcon = styled(ListItemIcon)({
+export const MyIconButton = styled(IconButton)({
   color: "#d1dffb",
   minWidth: "0px",
   padding: "8px 16px",

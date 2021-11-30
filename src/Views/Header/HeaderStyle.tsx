@@ -4,8 +4,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
+import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import { styled } from "@mui/system";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -39,7 +38,7 @@ export const MyListSocial = styled(List)<any>({
   marginLeft: "32px",
 });
 
-export const MyListItemIconSocial = styled(ListItemIcon)({
+export const MyIconButton = styled(IconButton)({
   color: "#acc7fe",
   minWidth: "0px",
   padding: "8px 16px",
@@ -47,7 +46,7 @@ export const MyListItemIconSocial = styled(ListItemIcon)({
 });
 
 export const MyDivider = styled(Divider)({
-  backgroundColor: "#acc7fe",
+  backgroundColor: "black",
 });
 
 export const AppBarStyle = styled(AppBar)({
@@ -75,10 +74,4 @@ export const MyButtonAppBar = styled(Button)({
     textDecoration: "underline",
     textUnderlineOffset: 10,
   },
-});
-
-export const MyCircularProgress = styled(CircularProgress)({
-  padding: "20px",
-  margin: "20px",
-  color: "#d1dffb",
 });

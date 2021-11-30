@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
 import { CardSkeleton } from "../FrontEndUtils/CardSkeleton";
 import { CardContent } from "../FrontEndUtils/CardContent";
+import { MyHelmet } from "../FrontEndUtils/MyHelmet";
 
 export default function Home() {
   const [refresh, setRefresh] = useState(false);
@@ -17,6 +18,7 @@ export default function Home() {
   }, []);
   return (
     <React.Fragment>
+      <MyHelmet title={"Home"} />
       <Container
         maxWidth="md"
         disableGutters

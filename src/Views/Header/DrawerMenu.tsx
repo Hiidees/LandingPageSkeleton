@@ -14,12 +14,12 @@ import LayersIcon from "@mui/icons-material/Layers";
 import LooksIcon from "@mui/icons-material/Looks";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { Stack } from "@mui/material";
+import Stack from "@mui/material/Stack";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
   MyBox,
   MyDivider,
-  MyListItemIconSocial,
+  MyIconButton,
   MyListLink,
   MyListName,
   MyListSocial,
@@ -134,9 +134,9 @@ export default function DrawerMenu(props: IDrawerMenu) {
               <MyListSocial component={Stack} direction="row">
                 {matches && (
                   <React.Fragment>
-                    <MyListItemIconSocial>
+                    <MyIconButton disableRipple>
                       <InstagramIcon />
-                    </MyListItemIconSocial>
+                    </MyIconButton>
 
                     <MyDivider
                       orientation="vertical"
@@ -144,18 +144,18 @@ export default function DrawerMenu(props: IDrawerMenu) {
                       flexItem
                     />
 
-                    <MyListItemIconSocial>
+                    <MyIconButton disableRipple>
                       <FacebookOutlinedIcon />
-                    </MyListItemIconSocial>
+                    </MyIconButton>
 
                     <MyDivider
                       orientation="vertical"
                       variant="middle"
                       flexItem
                     />
-                    <MyListItemIconSocial>
+                    <MyIconButton disableRipple>
                       <LinkedInIcon />
-                    </MyListItemIconSocial>
+                    </MyIconButton>
                   </React.Fragment>
                 )}
               </MyListSocial>
