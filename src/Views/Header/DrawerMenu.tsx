@@ -5,12 +5,15 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloudDoneIcon from "@mui/icons-material/CloudDone";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import ContactsIcon from "@mui/icons-material/Contacts";
+import LayersIcon from "@mui/icons-material/Layers";
+import LooksIcon from "@mui/icons-material/Looks";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import BluetoothConnectedOutlinedIcon from "@mui/icons-material/BluetoothConnectedOutlined";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Stack } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
@@ -106,9 +109,21 @@ export default function DrawerMenu(props: IDrawerMenu) {
                     <MyListItemButton
                       key={text}
                       onClick={() => handleDrawerClick(text)}
+                      disabled={
+                        window.location.pathname ===
+                        "/" +
+                          text
+                            .replace(/\s+/g, "")
+                            .toLowerCase()
+                            .replace("home", "")
+                      }
                     >
-                      <ListItemIcon>
-                        <MailIcon />
+                      <ListItemIcon sx={{ color: "#011230" }}>
+                        {text === "Home" && <HomeIcon />}
+                        {text === "Digital Marketing" && <CloudDoneIcon />}
+                        {text === "Mica Macho" && <LooksIcon />}
+                        {text === "Altri Progetti" && <LayersIcon />}
+                        {text === "Contatti" && <ContactsIcon />}
                       </ListItemIcon>
                       <ListItemText primary={text} />
                     </MyListItemButton>
@@ -139,7 +154,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
                       flexItem
                     />
                     <MyListItemIconSocial>
-                      <BluetoothConnectedOutlinedIcon />
+                      <LinkedInIcon />
                     </MyListItemIconSocial>
                   </React.Fragment>
                 )}

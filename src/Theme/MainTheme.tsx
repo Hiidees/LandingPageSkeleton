@@ -1,5 +1,7 @@
 import { createTheme } from "@mui/material";
 
+const font = "Quicksand, Heebo, sans-serif, Roboto, Arial";
+
 export default createTheme({
   palette: {
     action: {
@@ -21,6 +23,12 @@ export default createTheme({
           borderRadius: "10px",
         },
       },
+    },
+  },
+
+  typography: {
+    allVariants: {
+      fontFamily: font,
     },
   },
 });

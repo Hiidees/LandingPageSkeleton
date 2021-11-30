@@ -14,6 +14,7 @@ import {
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 export interface IFooterProps {}
 
@@ -40,7 +41,7 @@ export function Footer(props: IFooterProps) {
 
                   <MyDivider orientation="vertical" variant="middle" flexItem />
                   <MyListItemIcon>
-                    <BluetoothConnectedOutlinedIcon />
+                    <LinkedInIcon />
                   </MyListItemIcon>
                 </MyList>
               </Box>

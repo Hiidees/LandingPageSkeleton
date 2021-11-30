@@ -8,12 +8,48 @@ function SkeletonTypography() {
   return (
     <React.Fragment>
       <Box>
-        <Skeleton sx={{ marginBottom: 1, width: { xs: 400, sm: 500 } }} />
-        <Skeleton sx={{ marginBottom: 1, width: { xs: 400, sm: 500 } }} />
-        <Skeleton sx={{ marginBottom: 1, width: { xs: 400, sm: 500 } }} />
-        <Skeleton sx={{ marginBottom: 1, width: { xs: 400, sm: 500 } }} />
-        <Skeleton sx={{ marginBottom: 1, width: { xs: 400, sm: 500 } }} />
-        <Skeleton sx={{ marginBottom: 1, width: { xs: 400, sm: 500 } }} />
+        <Skeleton
+          sx={{
+            marginBottom: 1,
+            margin: { xs: "0 auto" },
+            width: 600,
+          }}
+        />
+        <Skeleton
+          sx={{
+            marginBottom: 1,
+            margin: { xs: "0 auto" },
+            width: 600,
+          }}
+        />
+        <Skeleton
+          sx={{
+            marginBottom: 1,
+            margin: { xs: "0 auto" },
+            width: 600,
+          }}
+        />
+        <Skeleton
+          sx={{
+            marginBottom: 1,
+            margin: { xs: "0 auto" },
+            width: 600,
+          }}
+        />
+        <Skeleton
+          sx={{
+            marginBottom: 1,
+            margin: { xs: "0 auto" },
+            width: 600,
+          }}
+        />
+        <Skeleton
+          sx={{
+            marginBottom: 1,
+            margin: { xs: "0 auto" },
+            width: 600,
+          }}
+        />
       </Box>
     </React.Fragment>
   );
@@ -25,16 +61,16 @@ function SkeletonImg() {
       variant="rectangular"
       width={150}
       height={150}
-      sx={{ marginTop: 5, marginLeft: 5, borderRadius: 7 }}
+      sx={{ margin: { xs: "0 auto" }, borderRadius: 5 }}
     />
   );
 }
 
 export function CardSkeleton() {
   return (
-    <Grid item xs={12} sm={12} md={12}>
+    <Grid item xs={12} sm={12} md={12} sx={{ marginBottom: 4 }}>
       <MyCard elevation={0} sx={{ display: { xs: "block", sm: "flex" } }}>
-        <BoxMedia sx={{ marginLeft: { xs: 15, sm: 0 } }}>
+        <BoxMedia>
           <SkeletonImg />
         </BoxMedia>
         <MyCardContent>

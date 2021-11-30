@@ -40,7 +40,7 @@ export function LayoutController(
     if (text === "Mica Macho") {
       onClickMM();
     }
-    if (text === "AltriProgetti") {
+    if (text === "Altri Progetti") {
       onClickAltriProgetti();
     }
     if (text === "Contatti") {
