@@ -65,16 +65,20 @@ export default function ParticlesComponent() {
           number: {
             density: {
               enable: true,
-              value_area: 800,
+              value_area: 1500,
             },
-            value: 100,
+            value: 70,
           },
           opacity: {
-            value: 0.5,
+            anim: {
+              enable: true,
+              speed: 1,
+              opacity_min: 0.05,
+            },
           },
           size: {
-            random: true,
-            value: 5,
+            random: false,
+            value: 2.5,
           },
         },
       }}
