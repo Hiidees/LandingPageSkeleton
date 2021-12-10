@@ -53,6 +53,7 @@ export const AppBarStyle = styled(AppBar)({
   background: "transparent",
   boxShadow: "none",
   color: "#d1dffb",
+  marginBottom: 5,
 });
 
 export const MyBoxAppbar = styled(Box)({
@@ -70,7 +71,7 @@ export const MyToolbarSmall = styled(Toolbar)({
 export const MyButtonAppBar = styled(Button)({
   "&:hover": {
     background: "none",
-    color: "#042057",
+    color: "#8b46fa",
     textDecoration: "underline",
     textUnderlineOffset: 10,
   },

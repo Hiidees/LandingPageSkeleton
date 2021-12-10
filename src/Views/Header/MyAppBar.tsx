@@ -35,6 +35,7 @@ export function MyAppBar(props: IAppBarProps) {
           {matches ? (
             <MyToolbarLarge>
               <MyButtonAppBar
+                disableRipple
                 color="inherit"
                 disabled={window.location.pathname === "/"}
                 onClick={() => onClickHome()}
@@ -42,6 +43,7 @@ export function MyAppBar(props: IAppBarProps) {
                 Home
               </MyButtonAppBar>
               <MyButtonAppBar
+                disableRipple
                 color="inherit"
                 disabled={window.location.pathname === "/digitalmarketing"}
                 onClick={() => onClickDM()}
@@ -49,6 +51,7 @@ export function MyAppBar(props: IAppBarProps) {
                 Digital Marketing
               </MyButtonAppBar>
               <MyButtonAppBar
+                disableRipple
                 color="inherit"
                 disabled={window.location.pathname === "/micamacho"}
                 onClick={() => onClickMM()}
@@ -56,6 +59,7 @@ export function MyAppBar(props: IAppBarProps) {
                 Mica Macho
               </MyButtonAppBar>
               <MyButtonAppBar
+                disableRipple
                 color="inherit"
                 disabled={window.location.pathname === "/altriprogetti"}
                 onClick={() => onClickAltriProgetti()}
@@ -63,6 +67,7 @@ export function MyAppBar(props: IAppBarProps) {
                 Altri Progetti
               </MyButtonAppBar>
               <MyButtonAppBar
+                disableRipple
                 color="inherit"
                 disabled={window.location.pathname === "/contatti"}
                 onClick={() => onClickContact()}

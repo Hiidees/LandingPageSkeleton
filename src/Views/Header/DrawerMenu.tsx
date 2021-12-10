@@ -109,6 +109,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
                     <MyListItemButton
                       key={text}
                       onClick={() => handleDrawerClick(text)}
+                      disableRipple
                       disabled={
                         window.location.pathname ===
                         "/" +
