@@ -2,7 +2,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
-import { MyHelmet } from "../Components/TitlePage/MyHelmet";
+import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
 import Skeleton from "@mui/material/Skeleton";
 
 export interface INotFoundProps {}

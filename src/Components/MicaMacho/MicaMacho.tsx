@@ -1,9 +1,9 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
-import { CardSkeleton } from "../Components/Card/CardSkeleton";
-import { CardContent } from "../Components/Card/CardContent";
-import { MyHelmet } from "../Components/TitlePage/MyHelmet";
+import { CardSkeleton } from "../Commons/Card/CardSkeleton";
+import { CardContent } from "../Commons/Card/CardContent";
+import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
 
 export interface IMicaMachoProps {}
 

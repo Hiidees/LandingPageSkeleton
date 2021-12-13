@@ -60,7 +60,7 @@ export function ToolbarDesktop(props: IToolbarDesktopProps) {
           disabled={window.location.pathname === "/otherproject"}
           onClick={() => onClickOtherProject()}
         >
-          Altri Progetti
+          {translationState.translation["Other Project"]}
         </MyButtonAppBar>
         <MyButtonAppBar
           disableRipple
@@ -68,7 +68,7 @@ export function ToolbarDesktop(props: IToolbarDesktopProps) {
           disabled={window.location.pathname === "/contact"}
           onClick={() => onClickContact()}
         >
-          Contatti
+          {translationState.translation["Contact"]}
         </MyButtonAppBar>
         <MyButtonAppBar
           disableRipple

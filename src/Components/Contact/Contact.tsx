@@ -1,7 +1,8 @@
-import { CardContent } from "@mui/material";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
+import { CardContent } from "../Commons/Card/CardContent";
+import { CardSkeleton } from "../Commons/Card/CardSkeleton";
 import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
 
 export interface IContactProps {}

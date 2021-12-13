@@ -30,6 +30,6 @@ export default class AppStateStore {
   }
 
   private constructor() {
-    //void
+    this.translation = SupportedLangugesEnum.It;
   }
 }

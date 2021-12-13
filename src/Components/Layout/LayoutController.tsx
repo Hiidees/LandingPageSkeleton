@@ -11,9 +11,9 @@ export function LayoutController(
 ) {
   const history = useHistory();
 
-  const translationState = useContext(TranslationContext)
+  const translationState = useContext(TranslationContext);
   function changeTranslation(languageCode: SupportedLangugesEnum) {
-    translationState.setTranslation(languageCode);
+    translationState.updateTranslation(languageCode);
   }
 
   function onClickHome() {

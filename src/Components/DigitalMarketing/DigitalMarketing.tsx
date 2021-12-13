@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { MyHelmet } from "../Components/TitlePage/MyHelmet";
-import { ItemCarousel } from "../Components/Carousel/ItemCarousel";
+import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
+import { ItemCarousel } from "../Commons/Carousel/ItemCarousel";
 
 export interface IDigitalMarketingProps {}
 
