@@ -8,6 +8,7 @@ export interface IAppProviderProps {}
 interface ITranslationContext {
   translation: any;
   updateTranslation: (LanguageCode: SupportedLangugesEnum) => void;
+  getTranslationKey: () => string;
 }
 export const TranslationContext = createContext({} as ITranslationContext);
 
@@ -18,6 +19,10 @@ export function AppProvider(props: IAppProviderProps) {
     appStateStore.translation = LanguageCode;
     setTranslation(appStateStore.translation);
   }
+
+  function getTranslationKey() {
+    return appStateStore.translationKey;
+  }
   const [translation, setTranslation] = useState(appStateStore.translation);
 
   return (
@@ -25,6 +30,7 @@ export function AppProvider(props: IAppProviderProps) {
       value={{
         translation,
         updateTranslation,
+        getTranslationKey,
       }}
     >
       <RouteProvider />

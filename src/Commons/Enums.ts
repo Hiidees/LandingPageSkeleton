@@ -1,6 +1,6 @@
 enum SupportedLangugesEnum {
-  It = "it",
-  En = "en",
+  It = "Italiano",
+  En = "English",
 }
 
 export default SupportedLangugesEnum;

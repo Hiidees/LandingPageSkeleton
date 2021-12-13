@@ -14,6 +14,9 @@ export function HeaderController(props: IHeaderControllerProps) {
     translationState.updateTranslation(languageCode);
   }
 
+  function getTranslationKey() {
+    return translationState.getTranslationKey();
+  }
   function onClickHome() {
     history.push("/");
   }
@@ -55,6 +58,7 @@ export function HeaderController(props: IHeaderControllerProps) {
     <React.Fragment>
       <MyAppBar
         onChangeTranslation={onChangeTranslation}
+        getTranslationKey={getTranslationKey}
         onClickHome={onClickHome}
         onClickDM={onClickDM}
         onClickMM={onClickMM}

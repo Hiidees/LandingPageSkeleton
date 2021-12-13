@@ -14,6 +14,7 @@ export interface IAppBarProps {
   onClickOtherProject: () => void;
   onClickContact: () => void;
   handleDrawerClick: (text: string) => void;
+  getTranslationKey: () => string;
 }
 
 export function MyAppBar(props: IAppBarProps) {
@@ -26,6 +27,7 @@ export function MyAppBar(props: IAppBarProps) {
     onClickOtherProject,
     onClickContact,
     handleDrawerClick,
+    getTranslationKey,
   } = props;
   return (
     <div>
@@ -39,6 +41,7 @@ export function MyAppBar(props: IAppBarProps) {
               onClickMM={onClickMM}
               onClickOtherProject={onClickOtherProject}
               onClickContact={onClickContact}
+              getTranslationKey={getTranslationKey}
             />
           ) : (
             <ToolbarMobile handleDrawerClick={handleDrawerClick} />

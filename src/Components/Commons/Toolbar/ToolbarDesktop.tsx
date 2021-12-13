@@ -3,6 +3,7 @@ import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
 import SupportedLangugesEnum from "../../../Commons/Enums";
 import { TranslationContext } from "../../../Providers/AppProvider";
+import LanguageDialog from "../Dialogs/LanguageDialog";
 import {
   ButtonAppBarStyle,
   ToolbarDesktopAppBarStyle,
@@ -15,6 +16,7 @@ export interface IToolbarDesktopProps {
   onClickMM: () => void;
   onClickOtherProject: () => void;
   onClickContact: () => void;
+  getTranslationKey: () => string;
 }
 
 export function ToolbarDesktop(props: IToolbarDesktopProps) {
@@ -25,6 +27,7 @@ export function ToolbarDesktop(props: IToolbarDesktopProps) {
     onClickMM,
     onClickOtherProject,
     onClickContact,
+    getTranslationKey,
   } = props;
 
   const translationState = React.useContext(TranslationContext);
@@ -77,15 +80,10 @@ export function ToolbarDesktop(props: IToolbarDesktopProps) {
         >
           {translationState.translation["Contact"]}
         </Button>
-        <Button
-          sx={ButtonAppBarStyle}
-          disableRipple
-          color="inherit"
-          disabled={window.location.pathname === "/contact"}
-          onClick={() => onChangeTranslation(SupportedLangugesEnum.En)}
-        >
-          {translationState.translation["Language"]}
-        </Button>
+        <LanguageDialog
+          onChangeTranslation={onChangeTranslation}
+          getTranslationKey={getTranslationKey}
+        />
       </Toolbar>
     </React.Fragment>
   );

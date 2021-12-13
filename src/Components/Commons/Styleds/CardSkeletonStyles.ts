@@ -23,13 +23,13 @@ export const CardContentStyle = {
 // Skeleton Region
 
 export const LineSkeletonStyle = {
-  marginBottom: 1,
+  marginBottom: 5,
   margin: { xs: "0 auto" },
   width: 600,
 } as const;
 
 export const ImageSkeletonStyle = {
-  margin: { xs: "0 auto" },
+  margin: { xs: "0 auto", sm: 5 },
   borderRadius: 5,
 } as const;
 
