@@ -56,6 +56,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
       {(["left"] as const).map((anchor) => (
         <React.Fragment key={anchor}>
           <Button
+            disableRipple
             color="inherit"
             startIcon={<MenuIcon />}
             onClick={toggleDrawer(true)}
