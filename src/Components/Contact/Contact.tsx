@@ -1,7 +1,7 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
-import { CardContent } from "../Commons/Card/CardContent";
+import { MyCardContent } from "../Commons/Card/MyCardContent";
 import { CardSkeleton } from "../Commons/Card/CardSkeleton";
 import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
 
@@ -27,7 +27,11 @@ export default function Contact(props: IContactProps) {
         sx={{ display: refresh ? "block" : " none" }}
       >
         <Grid container spacing={2}>
-          <CardContent imageUrl="/Contact.png" alt="Contact" title="Contact" />
+          <MyCardContent
+            imageUrl="/Contact.png"
+            alt="Contact"
+            title="Contact"
+          />
         </Grid>
       </Container>
 

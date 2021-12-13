@@ -6,7 +6,17 @@ import * as React from "react";
 import Carousel from "react-material-ui-carousel";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { MyCard } from "../Card/CardStyles";
+import Card from "@mui/material/Card";
+import {
+  BoxCarouselStyle,
+  CardCarouselStyle,
+  ContainerImageCarouselStyle,
+  ContainerSkeletonCarouselStyle,
+  GridCarouselStyle,
+  NavButtonsCarouselStyle,
+  NavButtonsWrapperCarouselStyle,
+  SkeletonCarouselStyle,
+} from "../Styleds/ItemCarouselStyles";
 
 export interface IItemCarouselProps {
   items: Object[];
@@ -25,15 +35,10 @@ export function ItemCarousel(props: IItemCarouselProps) {
         duration={800}
         fullHeightHover={false}
         navButtonsWrapperProps={{
-          style: {
-            marginLeft: 40,
-          },
+          style: NavButtonsWrapperCarouselStyle,
         }}
         navButtonsProps={{
-          style: {
-            background: "transparent",
-            color: "black",
-          },
+          style: NavButtonsCarouselStyle,
         }}
         PrevIcon={<ArrowBackIosNewIcon fontSize={"large"} />}
         NextIcon={<ArrowForwardIosIcon fontSize={"large"} />}
@@ -50,24 +55,16 @@ function Item(props: any) {
   const { refresh } = props;
   return (
     <React.Fragment>
-      <MyCard
-        sx={{
-          display: { xs: "block", sm: "flex" },
-        }}
-        elevation={0}
-      >
+      <Card sx={CardCarouselStyle} elevation={0}>
         <Container
           maxWidth="md"
           disableGutters
-          sx={{ display: refresh ? "block" : " none" }}
+          sx={ContainerImageCarouselStyle.container(refresh)}
         >
-          <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+          <Grid container spacing={2} sx={GridCarouselStyle}>
             <Box
               component="img"
-              sx={{
-                maxHeight: { xs: 400, md: 500 },
-                maxWidth: { xs: 400, md: 500 },
-              }}
+              sx={BoxCarouselStyle}
               alt="The house from the offer."
               src={props.item.ImageUrl}
             />
@@ -76,18 +73,18 @@ function Item(props: any) {
         <Container
           maxWidth="md"
           disableGutters
-          sx={{ display: refresh ? "none" : " block" }}
+          sx={ContainerSkeletonCarouselStyle.container(refresh)}
         >
           <Grid container spacing={2}>
             <Skeleton
               variant="rectangular"
               width={450}
               height={450}
-              sx={{ margin: { xs: "0 auto" }, borderRadius: 5 }}
+              sx={SkeletonCarouselStyle}
             />
           </Grid>
         </Container>
-      </MyCard>
+      </Card>
     </React.Fragment>
   );
 }

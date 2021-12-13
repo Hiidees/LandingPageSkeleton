@@ -4,6 +4,13 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
 import Skeleton from "@mui/material/Skeleton";
+import {
+  BoxNotFoundStyle,
+  ContainerImageNotFoundStyle,
+  ContainerSkeletonNotFoundStyle,
+  GridNotFoundStyle,
+  SkeletonNotFoundStyle,
+} from "../Commons/Styleds/NotFoundStyles";
 
 export interface INotFoundProps {}
 
@@ -25,16 +32,13 @@ export default function NotFound(props: INotFoundProps) {
       <Container
         maxWidth="md"
         disableGutters
-        sx={{ display: refresh ? "block" : " none" }}
+        sx={ContainerImageNotFoundStyle.container(refresh)}
       >
-        <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+        <Grid container spacing={2} sx={GridNotFoundStyle}>
           <Box
             component="img"
-            sx={{
-              maxHeight: { xs: 400, md: 500 },
-              maxWidth: { xs: 400, md: 500 },
-            }}
-            alt="The house from the offer."
+            sx={BoxNotFoundStyle}
+            alt="Not Found"
             src="/404.png"
           />
         </Grid>
@@ -43,14 +47,14 @@ export default function NotFound(props: INotFoundProps) {
       <Container
         maxWidth="md"
         disableGutters
-        sx={{ display: refresh ? "none" : " block" }}
+        sx={ContainerSkeletonNotFoundStyle.container(refresh)}
       >
         <Grid container spacing={2}>
           <Skeleton
             variant="rectangular"
             width={450}
             height={450}
-            sx={{ margin: { xs: "0 auto" }, borderRadius: 5 }}
+            sx={SkeletonNotFoundStyle}
           />
         </Grid>
       </Container>

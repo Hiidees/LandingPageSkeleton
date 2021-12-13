@@ -1,6 +1,15 @@
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { BoxMedia, MyCard, MyCardContent, MyCardMedia } from "./CardStyles";
+import {
+  BoxCardStyle,
+  CardContentStyle,
+  CardMediaStyle,
+  CardStyle,
+} from "../Styleds/CardSkeletonStyles";
 
 export interface IMyCardContentProps {
   imageUrl: string;
@@ -8,23 +17,23 @@ export interface IMyCardContentProps {
   alt: string;
 }
 
-export function CardContent(props: IMyCardContentProps) {
+export function MyCardContent(props: IMyCardContentProps) {
   const { imageUrl, title, alt } = props;
 
   return (
     <Grid item xs={12} sm={12} md={12}>
-      <MyCard sx={{ display: { xs: "block", sm: "flex" } }} elevation={0}>
-        <BoxMedia>
-          <MyCardMedia
-            sx={{ margin: { xs: "0 auto" } }}
+      <Card sx={CardStyle} elevation={0}>
+        <Box sx={BoxCardStyle}>
+          <CardMedia
+            sx={CardMediaStyle}
             component="img"
             image={imageUrl}
             alt={alt}
             title={title}
           />
-        </BoxMedia>
+        </Box>
 
-        <MyCardContent>
+        <CardContent sx={CardContentStyle}>
           <Typography variant="body1" color="#d1dffb">
             Laborum tempor id duis exercitation do enim sint enim dolore anim
             Lorem laborum cillum nulla. Sint enim anim nulla cillum et eiusmod
@@ -33,8 +42,8 @@ export function CardContent(props: IMyCardContentProps) {
             quis consequat laboris exercitation do. Sint cupidatat cillum velit
             ex voluptate ad enim voluptate sint do enim excepteur est.
           </Typography>
-        </MyCardContent>
-      </MyCard>
+        </CardContent>
+      </Card>
     </Grid>
   );
 }

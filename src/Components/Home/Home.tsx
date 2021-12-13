@@ -2,7 +2,11 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
 import { CardSkeleton } from "../Commons/Card/CardSkeleton";
-import { CardContent } from "../Commons/Card/CardContent";
+import { MyCardContent } from "../Commons/Card/MyCardContent";
+import {
+  ContainerImageHomeStyle,
+  ContainerSkeletonHomeStyle,
+} from "../Commons/Styleds/HomeStyles";
 import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
 
 export default function Home() {
@@ -22,21 +26,21 @@ export default function Home() {
       <Container
         maxWidth="md"
         disableGutters
-        sx={{ display: refresh ? "block" : " none" }}
+        sx={ContainerImageHomeStyle.container(refresh)}
       >
         <Grid container spacing={2}>
-          <CardContent imageUrl="/Home.png" alt="Home" title="Home" />
-          <CardContent
+          <MyCardContent imageUrl="/Home.png" alt="Home" title="Home" />
+          <MyCardContent
             imageUrl="/Contact.png"
             alt="Contact me"
             title="Contact me"
           />
-          <CardContent
+          <MyCardContent
             imageUrl="/Aboutme.png"
             alt="About me"
             title="About me"
           />
-          <CardContent
+          <MyCardContent
             imageUrl="/Portfolio.png"
             alt="My Portfolio"
             title="My Portfolio"
@@ -47,7 +51,7 @@ export default function Home() {
       <Container
         maxWidth="md"
         disableGutters
-        sx={{ display: refresh ? "none" : " block" }}
+        sx={ContainerSkeletonHomeStyle.container(refresh)}
       >
         <Grid container spacing={2}>
           <CardSkeleton />

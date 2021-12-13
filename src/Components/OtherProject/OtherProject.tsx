@@ -2,7 +2,11 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
 import { CardSkeleton } from "../Commons/Card/CardSkeleton";
-import { CardContent } from "../Commons/Card/CardContent";
+import { MyCardContent } from "../Commons/Card/MyCardContent";
+import {
+  ContainerImageOtherProjectStyle,
+  ContainerSkeletonOtherProjectStyle,
+} from "../Commons/Styleds/OtherProject";
 import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
 export interface IOtherProjectProps {}
 
@@ -23,10 +27,10 @@ export default function OtherProject(props: IOtherProjectProps) {
       <Container
         maxWidth="md"
         disableGutters
-        sx={{ display: refresh ? "block" : " none" }}
+        sx={ContainerImageOtherProjectStyle.container(refresh)}
       >
         <Grid container spacing={2}>
-          <CardContent
+          <MyCardContent
             imageUrl="/Portfolio.png"
             alt="Altri Progetti"
             title="Altri Progetti"
@@ -37,7 +41,7 @@ export default function OtherProject(props: IOtherProjectProps) {
       <Container
         maxWidth="md"
         disableGutters
-        sx={{ display: refresh ? "none" : " block" }}
+        sx={ContainerSkeletonOtherProjectStyle.container(refresh)}
       >
         <Grid container spacing={2}>
           <CardSkeleton />

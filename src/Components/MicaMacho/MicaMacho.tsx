@@ -2,7 +2,11 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
 import { CardSkeleton } from "../Commons/Card/CardSkeleton";
-import { CardContent } from "../Commons/Card/CardContent";
+import { MyCardContent } from "../Commons/Card/MyCardContent";
+import {
+  ContainerImageMicaMachoStyle,
+  ContainerSkeletonMicaMachoStyle,
+} from "../Commons/Styleds/MicaMachoStyles";
 import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
 
 export interface IMicaMachoProps {}
@@ -24,10 +28,10 @@ export default function MicaMacho(props: IMicaMachoProps) {
       <Container
         maxWidth="md"
         disableGutters
-        sx={{ display: refresh ? "block" : " none" }}
+        sx={ContainerImageMicaMachoStyle.container(refresh)}
       >
         <Grid container spacing={2}>
-          <CardContent
+          <MyCardContent
             imageUrl="/Contact.png"
             alt="Mica Macho"
             title="Mica Macho"
@@ -38,7 +42,7 @@ export default function MicaMacho(props: IMicaMachoProps) {
       <Container
         maxWidth="md"
         disableGutters
-        sx={{ display: refresh ? "none" : " block" }}
+        sx={ContainerSkeletonMicaMachoStyle.container(refresh)}
       >
         <Grid container spacing={2}>
           <CardSkeleton />
