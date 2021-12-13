@@ -1,4 +1,4 @@
-import { DigitalMarketingController } from "../../Views/DigitalMarketing/DigitalMarketingController";
+import { DigitalMarketingController } from "../../Components/DigitalMarketing/DigitalMarketingController";
 
 export default function DigitalMarketingProvider() {
   return <DigitalMarketingController />;

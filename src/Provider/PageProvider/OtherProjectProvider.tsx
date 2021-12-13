@@ -1,4 +1,4 @@
-import { OtherProjectController } from "../../Views/OtherProject/OtherProjectController";
+import { OtherProjectController } from "../../Components/OtherProject/OtherProjectController";
 
 export default function OtherProjectProvider() {
   return <OtherProjectController />;

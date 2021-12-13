@@ -1,4 +1,4 @@
-import { ContactController } from "../../Views/Contact/ContactController";
+import { ContactController } from "../../Components/Contact/ContactController";
 
 export default function ContactProvider() {
   return <ContactController />;
