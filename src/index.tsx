@@ -3,8 +3,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@mui/material/styles";
-import MainTheme from "./Theme/MainTheme";
-import RouteProvider from "./Provider/RouteProvider";
+import MainTheme from "./Themes/MainTheme";
+import { AppProvider } from "./Providers/AppProvider";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,7 +17,7 @@ ReactDOM.render(
           },
         }}
       />
-      <RouteProvider />
+      <AppProvider />
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
