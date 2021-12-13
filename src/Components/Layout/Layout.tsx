@@ -1,10 +1,13 @@
 import { Container } from "@mui/material";
 import React from "react";
-import ParticlesComponent from "../Components/Particles/ParticlesComponent";
+import SupportedLangugesEnum from "../../Commons/Enums";
+import ParticlesComponent from "../Commons/Particles/ParticlesComponent";
+
 import { Footer } from "./Footer/Footer";
 import { MyAppBar } from "./Header/MyAppBar";
 
 interface ILayoutProps {
+  onChangeTranslation: (languageCode: SupportedLangugesEnum) => void;
   onClickHome: () => void;
   onClickDM: () => void;
   onClickMM: () => void;
@@ -15,6 +18,7 @@ interface ILayoutProps {
 
 export default function Layout(props: React.PropsWithChildren<ILayoutProps>) {
   const {
+    onChangeTranslation,
     onClickHome,
     onClickDM,
     onClickMM,
@@ -26,6 +30,7 @@ export default function Layout(props: React.PropsWithChildren<ILayoutProps>) {
     <React.Fragment>
       <ParticlesComponent />
       <MyAppBar
+        onChangeTranslation={onChangeTranslation}
         onClickHome={onClickHome}
         onClickDM={onClickDM}
         onClickMM={onClickMM}

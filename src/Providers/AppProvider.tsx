@@ -3,14 +3,21 @@ import AppStateStore from "../Stores/AppStateStore";
 import RouteProvider from "./RouteProvider";
 
 export interface IAppProviderProps {}
-export const AppStateContext = createContext({} as AppStateStore);
+
+interface ITranslationContext {
+  translation: any;
+  setTranslation: React.Dispatch<any>;
+}
+export const TranslationContext = createContext({} as ITranslationContext);
 
 export function AppProvider(props: IAppProviderProps) {
-  const [translation, setTranslation] = useState(AppStateStore.getInstance());
+
+  const appStateStore = AppStateStore.getInstance();
+  const [translation, setTranslation] = useState(appStateStore.translation);
 
   return (
-    <AppStateContext.Provider value={translation}>
+    <TranslationContext.Provider value={{ translation, setTranslation }}>
       <RouteProvider />
-    </AppStateContext.Provider>
+    </TranslationContext.Provider>
   );
 }

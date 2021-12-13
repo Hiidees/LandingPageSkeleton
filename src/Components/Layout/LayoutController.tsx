@@ -1,5 +1,8 @@
 import Layout from "./Layout";
 import { useHistory } from "react-router-dom";
+import SupportedLangugesEnum from "../../Commons/Enums";
+import { useContext } from "react";
+import { TranslationContext } from "../../Providers/AppProvider";
 
 interface ILayoutControllerProps {}
 
@@ -7,6 +10,11 @@ export function LayoutController(
   props: React.PropsWithChildren<ILayoutControllerProps>
 ) {
   const history = useHistory();
+
+  const translationState = useContext(TranslationContext)
+  function changeTranslation(languageCode: SupportedLangugesEnum) {
+    translationState.setTranslation(languageCode);
+  }
 
   function onClickHome() {
     history.push("/");
@@ -48,6 +56,7 @@ export function LayoutController(
 
   return (
     <Layout
+      onChangeTranslation={changeTranslation}
       onClickHome={onClickHome}
       onClickDM={onClickDM}
       onClickMM={onClickMM}

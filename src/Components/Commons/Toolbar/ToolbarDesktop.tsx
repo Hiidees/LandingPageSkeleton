@@ -1,10 +1,13 @@
 import * as React from "react";
+import SupportedLangugesEnum from "../../../Commons/Enums";
+import { TranslationContext } from "../../../Providers/AppProvider";
 import {
   MyButtonAppBar,
   MyToolbarLarge,
 } from "../../Layout/Header/HeaderStyle";
 
 export interface IToolbarDesktopProps {
+  onChangeTranslation: (languageCode: SupportedLangugesEnum) => void;
   onClickHome: () => void;
   onClickDM: () => void;
   onClickMM: () => void;
@@ -14,12 +17,16 @@ export interface IToolbarDesktopProps {
 
 export function ToolbarDesktop(props: IToolbarDesktopProps) {
   const {
+    onChangeTranslation,
     onClickHome,
     onClickDM,
     onClickMM,
     onClickOtherProject,
     onClickContact,
   } = props;
+
+  const translationState = React.useContext(TranslationContext);
+
   return (
     <React.Fragment>
       <MyToolbarLarge>
@@ -62,6 +69,14 @@ export function ToolbarDesktop(props: IToolbarDesktopProps) {
           onClick={() => onClickContact()}
         >
           Contatti
+        </MyButtonAppBar>
+        <MyButtonAppBar
+          disableRipple
+          color="inherit"
+          disabled={window.location.pathname === "/contact"}
+          onClick={() => onChangeTranslation(SupportedLangugesEnum.En)}
+        >
+          {translationState.translation["Language"]}
         </MyButtonAppBar>
       </MyToolbarLarge>
     </React.Fragment>
