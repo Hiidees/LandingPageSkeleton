@@ -15,6 +15,17 @@ export default createTheme({
         root: {},
       },
     },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          background: "transparent",
+          boxShadow: "none",
+          color: "#d1dffb",
+          marginBottom: 5,
+          marginTop: 3,
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {

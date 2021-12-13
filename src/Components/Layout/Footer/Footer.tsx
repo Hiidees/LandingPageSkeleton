@@ -1,20 +1,24 @@
 import useMediaQuery from "@mui/material/useMediaQuery";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import BluetoothConnectedOutlinedIcon from "@mui/icons-material/BluetoothConnectedOutlined";
 import React from "react";
-import {
-  MyFooter,
-  MyToolbar,
-  MyIconButton,
-  MyDivider,
-  MyTypography,
-  MyList,
-} from "./FooterStyles";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import AppBar from "@mui/material/AppBar";
+import {
+  DividerVerticalFooterStyle,
+  IconButtonFooterStyle,
+  ListSocialFooterStyle,
+  ToolbarFooterStyle,
+  TypographyFooterStyle,
+} from "../../Commons/Styleds/FooterStyles";
+import Toolbar from "@mui/material/Toolbar";
+import List from "@mui/material/List";
+import IconButton from "@mui/material/IconButton";
+import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
 
 export interface IFooterProps {}
 
@@ -24,34 +28,48 @@ export function Footer(props: IFooterProps) {
   return (
     <React.Fragment>
       {matches && (
-        <MyFooter position="static">
+        <AppBar position="static">
           <Container maxWidth="md">
-            <MyToolbar variant="dense">
+            <Toolbar sx={ToolbarFooterStyle} variant="dense">
               <Box>
-                <MyList component={Stack} direction="row">
-                  <MyIconButton disableRipple>
+                <List
+                  sx={ListSocialFooterStyle}
+                  component={Stack}
+                  direction="row"
+                >
+                  <IconButton sx={IconButtonFooterStyle} disableRipple>
                     <InstagramIcon />
-                  </MyIconButton>
+                  </IconButton>
 
-                  <MyDivider orientation="vertical" variant="middle" flexItem />
+                  <Divider
+                    sx={DividerVerticalFooterStyle}
+                    orientation="vertical"
+                    variant="middle"
+                    flexItem
+                  />
 
-                  <MyIconButton disableRipple>
+                  <IconButton sx={IconButtonFooterStyle} disableRipple>
                     <FacebookOutlinedIcon />
-                  </MyIconButton>
+                  </IconButton>
 
-                  <MyDivider orientation="vertical" variant="middle" flexItem />
-                  <MyIconButton disableRipple>
+                  <Divider
+                    sx={DividerVerticalFooterStyle}
+                    orientation="vertical"
+                    variant="middle"
+                    flexItem
+                  />
+                  <IconButton sx={IconButtonFooterStyle} disableRipple>
                     <LinkedInIcon />
-                  </MyIconButton>
-                </MyList>
+                  </IconButton>
+                </List>
               </Box>
 
-              <MyTypography color="inherit">
+              <Typography sx={TypographyFooterStyle} color="inherit">
                 © 2021 Landing Page Skeleton
-              </MyTypography>
-            </MyToolbar>
+              </Typography>
+            </Toolbar>
           </Container>
-        </MyFooter>
+        </AppBar>
       )}
     </React.Fragment>
   );

@@ -1,10 +1,12 @@
+import Button from "@mui/material/Button";
+import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
 import SupportedLangugesEnum from "../../../Commons/Enums";
 import { TranslationContext } from "../../../Providers/AppProvider";
 import {
-  MyButtonAppBar,
-  MyToolbarLarge,
-} from "../../Layout/Header/HeaderStyle";
+  ButtonAppBarStyle,
+  ToolbarDesktopAppBarStyle,
+} from "../Styleds/HeaderStyle";
 
 export interface IToolbarDesktopProps {
   onChangeTranslation: (languageCode: SupportedLangugesEnum) => void;
@@ -29,56 +31,62 @@ export function ToolbarDesktop(props: IToolbarDesktopProps) {
 
   return (
     <React.Fragment>
-      <MyToolbarLarge>
-        <MyButtonAppBar
+      <Toolbar sx={ToolbarDesktopAppBarStyle}>
+        <Button
+          sx={ButtonAppBarStyle}
           disableRipple
           color="inherit"
           disabled={window.location.pathname === "/"}
           onClick={() => onClickHome()}
         >
           Home
-        </MyButtonAppBar>
-        <MyButtonAppBar
+        </Button>
+        <Button
+          sx={ButtonAppBarStyle}
           disableRipple
           color="inherit"
           disabled={window.location.pathname === "/digitalmarketing"}
           onClick={() => onClickDM()}
         >
           Digital Marketing
-        </MyButtonAppBar>
-        <MyButtonAppBar
+        </Button>
+        <Button
+          sx={ButtonAppBarStyle}
           disableRipple
           color="inherit"
           disabled={window.location.pathname === "/micamacho"}
           onClick={() => onClickMM()}
         >
           Mica Macho
-        </MyButtonAppBar>
-        <MyButtonAppBar
+        </Button>
+        <Button
+          sx={ButtonAppBarStyle}
           disableRipple
           color="inherit"
           disabled={window.location.pathname === "/otherproject"}
           onClick={() => onClickOtherProject()}
         >
           {translationState.translation["Other Project"]}
-        </MyButtonAppBar>
-        <MyButtonAppBar
+        </Button>
+        <Button
+          sx={ButtonAppBarStyle}
           disableRipple
           color="inherit"
           disabled={window.location.pathname === "/contact"}
           onClick={() => onClickContact()}
         >
           {translationState.translation["Contact"]}
-        </MyButtonAppBar>
-        <MyButtonAppBar
+        </Button>
+        <Button
+          sx={ButtonAppBarStyle}
           disableRipple
           color="inherit"
           disabled={window.location.pathname === "/contact"}
           onClick={() => onChangeTranslation(SupportedLangugesEnum.En)}
         >
           {translationState.translation["Language"]}
-        </MyButtonAppBar>
-      </MyToolbarLarge>
+        </Button>
+      </Toolbar>
     </React.Fragment>
   );
 }

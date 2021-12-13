@@ -62,12 +62,32 @@ export const IconButtonDrawerStyle = {
   "&:hover": { color: "#042057" },
 } as const;
 
-export const DividerColomnDrawerStyle = {
+export const DividerVerticalDrawerStyle = {
   backgroundColor: "black",
 } as const;
 
 //end Drawer Region
 
 //AppBar Region
+export const BoxAppBarStyle = {
+  flexGrow: 1,
+} as const;
+
+export const ToolbarDesktopAppBarStyle = {
+  justifyContent: "center",
+} as const;
+
+export const ToolbarMobileAppBarStyle = {
+  justifyContent: "right",
+} as const;
+
+export const ButtonAppBarStyle = {
+  "&:hover": {
+    background: "none",
+    color: "#8b46fa",
+    textDecoration: "underline",
+    textUnderlineOffset: 10,
+  },
+} as const;
 
 //end AppBar Region

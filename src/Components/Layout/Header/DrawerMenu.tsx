@@ -28,8 +28,8 @@ import {
   ListItemIconDrawerStyle,
   IconButtonDrawerStyle,
   ListSocialDrawerStyle,
-  DividerColomnDrawerStyle,
-} from "./MyHeaderStyle";
+  DividerVerticalDrawerStyle,
+} from "../../Commons/Styleds/HeaderStyle";
 import { Box } from "@mui/system";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -145,7 +145,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
                     </IconButton>
 
                     <Divider
-                      sx={DividerColomnDrawerStyle}
+                      sx={DividerVerticalDrawerStyle}
                       orientation="vertical"
                       variant="middle"
                       flexItem
@@ -156,7 +156,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
                     </IconButton>
 
                     <Divider
-                      sx={DividerColomnDrawerStyle}
+                      sx={DividerVerticalDrawerStyle}
                       orientation="vertical"
                       variant="middle"
                       flexItem

@@ -1,8 +1,10 @@
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import SupportedLangugesEnum from "../../../Commons/Enums";
 import { ToolbarDesktop } from "../../Commons/Toolbar/ToolbarDesktop";
 import { ToolbarMobile } from "../../Commons/Toolbar/ToolbarMobile";
-import { AppBarStyle, MyBoxAppbar } from "./HeaderStyle";
+import { BoxAppBarStyle } from "../../Commons/Styleds/HeaderStyle";
 
 export interface IAppBarProps {
   onChangeTranslation: (languageCode: SupportedLangugesEnum) => void;
@@ -27,8 +29,8 @@ export function MyAppBar(props: IAppBarProps) {
   } = props;
   return (
     <div>
-      <MyBoxAppbar>
-        <AppBarStyle position="static">
+      <Box sx={BoxAppBarStyle}>
+        <AppBar position="static">
           {matches ? (
             <ToolbarDesktop
               onChangeTranslation={onChangeTranslation}
@@ -41,8 +43,8 @@ export function MyAppBar(props: IAppBarProps) {
           ) : (
             <ToolbarMobile handleDrawerClick={handleDrawerClick} />
           )}
-        </AppBarStyle>
-      </MyBoxAppbar>
+        </AppBar>
+      </Box>
     </div>
   );
 }
