@@ -1,10 +1,10 @@
-import Contatti from "./Contatti";
+import OtherProject from "./OtherProject";
 import { LayoutController } from "../Layout/LayoutController";
 
-export function ContattiController() {
+export function OtherProjectController() {
   return (
     <LayoutController>
-      <Contatti />
+      <OtherProject />
     </LayoutController>
   );
 }

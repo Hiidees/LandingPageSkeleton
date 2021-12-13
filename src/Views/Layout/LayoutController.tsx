@@ -20,7 +20,7 @@ export function LayoutController(
     history.push("/micamacho");
   }
 
-  function onClickAltriProgetti() {
+  function onClickOtherProject() {
     history.push("/altriprogetti");
   }
 
@@ -29,9 +29,7 @@ export function LayoutController(
   }
 
   function handleDrawerClick(text: string) {
-    console.log("Ciao1");
     if (text === "Home") {
-      console.log("Ciao2");
       onClickHome();
     }
     if (text === "Digital Marketing") {
@@ -41,7 +39,7 @@ export function LayoutController(
       onClickMM();
     }
     if (text === "Altri Progetti") {
-      onClickAltriProgetti();
+      onClickOtherProject();
     }
     if (text === "Contatti") {
       onClickContact();
@@ -53,7 +51,7 @@ export function LayoutController(
       onClickHome={onClickHome}
       onClickDM={onClickDM}
       onClickMM={onClickMM}
-      onClickAltriProgetti={onClickAltriProgetti}
+      onClickOtherProject={onClickOtherProject}
       onClickContact={onClickContact}
       handleDrawerClick={handleDrawerClick}
     >

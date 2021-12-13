@@ -17,14 +17,23 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Stack from "@mui/material/Stack";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
-  MyBox,
-  MyDivider,
-  MyIconButton,
-  MyListLink,
-  MyListName,
-  MyListSocial,
-  MyListItemButton,
-} from "./HeaderStyle";
+  ButtonDrawerStyle,
+  DrawerStyle,
+  PaperDrawerStyle,
+  BoxDrawerStyle,
+  ListNameDrawerStyle,
+  DividerRowDrawerStyle,
+  ListLinkDrawerStyle,
+  ListButtonDrawerStyle,
+  ListItemIconDrawerStyle,
+  IconButtonDrawerStyle,
+  ListSocialDrawerStyle,
+  DividerColomnDrawerStyle,
+} from "./MyHeaderStyle";
+import { Box } from "@mui/system";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import IconButton from "@mui/material/IconButton";
 
 type Anchor = "left";
 
@@ -60,13 +69,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
             color="inherit"
             startIcon={<MenuIcon />}
             onClick={toggleDrawer(true)}
-            sx={{
-              display: { sm: "none", md: "none" },
-              "&:hover": {
-                background: "none",
-                color: "#042057",
-              },
-            }}
+            sx={ButtonDrawerStyle}
           >
             Menu
           </Button>
@@ -75,30 +78,26 @@ export default function DrawerMenu(props: IDrawerMenu) {
             anchor={anchor}
             open={state}
             PaperProps={{
-              sx: {
-                backgroundColor: "rgb(13,83,178)",
-                borderTopRightRadius: 6,
-                borderBottomRightRadius: 6,
-                height: "100%",
-              },
+              sx: PaperDrawerStyle,
             }}
-            sx={{ display: { sm: "none", md: "none" } }}
+            sx={DrawerStyle}
             onClose={toggleDrawer(false)}
             onOpen={toggleDrawer(true)}
           >
-            <MyBox
+            <Box
               role="presentation"
+              sx={BoxDrawerStyle}
               onClick={toggleDrawer(false)}
               onKeyDown={toggleDrawer(false)}
             >
-              <MyListName>
+              <List sx={ListNameDrawerStyle}>
                 <ListItem>
                   <ListItemIcon></ListItemIcon>
                   <ListItemText primary={"My name"} />
                 </ListItem>
-              </MyListName>
-              <Divider variant="middle" sx={{ backgroundColor: "#acc7fe" }} />
-              <MyListLink>
+              </List>
+              <Divider variant="middle" sx={DividerRowDrawerStyle} />
+              <List sx={ListLinkDrawerStyle}>
                 {[
                   "Home",
                   "Digital Marketing",
@@ -107,7 +106,8 @@ export default function DrawerMenu(props: IDrawerMenu) {
                   "Contatti",
                 ].map((text) => (
                   <React.Fragment>
-                    <MyListItemButton
+                    <ListItemButton
+                      sx={ListButtonDrawerStyle}
                       key={text}
                       onClick={() => handleDrawerClick(text)}
                       disableRipple
@@ -120,7 +120,7 @@ export default function DrawerMenu(props: IDrawerMenu) {
                             .replace("home", "")
                       }
                     >
-                      <ListItemIcon sx={{ color: "#011230" }}>
+                      <ListItemIcon sx={ListItemIconDrawerStyle}>
                         {text === "Home" && <HomeIcon />}
                         {text === "Digital Marketing" && <CloudDoneIcon />}
                         {text === "Mica Macho" && <LooksIcon />}
@@ -128,40 +128,46 @@ export default function DrawerMenu(props: IDrawerMenu) {
                         {text === "Contatti" && <ContactsIcon />}
                       </ListItemIcon>
                       <ListItemText primary={text} />
-                    </MyListItemButton>
+                    </ListItemButton>
                   </React.Fragment>
                 ))}
-              </MyListLink>
+              </List>
 
-              <MyListSocial component={Stack} direction="row">
+              <List
+                sx={ListSocialDrawerStyle}
+                component={Stack}
+                direction="row"
+              >
                 {matches && (
                   <React.Fragment>
-                    <MyIconButton disableRipple>
+                    <IconButton sx={IconButtonDrawerStyle} disableRipple>
                       <InstagramIcon />
-                    </MyIconButton>
+                    </IconButton>
 
-                    <MyDivider
+                    <Divider
+                      sx={DividerColomnDrawerStyle}
                       orientation="vertical"
                       variant="middle"
                       flexItem
                     />
 
-                    <MyIconButton disableRipple>
+                    <IconButton sx={IconButtonDrawerStyle} disableRipple>
                       <FacebookOutlinedIcon />
-                    </MyIconButton>
+                    </IconButton>
 
-                    <MyDivider
+                    <Divider
+                      sx={DividerColomnDrawerStyle}
                       orientation="vertical"
                       variant="middle"
                       flexItem
                     />
-                    <MyIconButton disableRipple>
+                    <IconButton sx={IconButtonDrawerStyle} disableRipple>
                       <LinkedInIcon />
-                    </MyIconButton>
+                    </IconButton>
                   </React.Fragment>
                 )}
-              </MyListSocial>
-            </MyBox>
+              </List>
+            </Box>
           </SwipeableDrawer>
         </React.Fragment>
       ))}

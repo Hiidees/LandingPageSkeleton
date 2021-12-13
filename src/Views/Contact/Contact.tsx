@@ -1,12 +1,13 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import React, { useEffect, useState } from "react";
-import { CardSkeleton } from "../FrontEndUtils/CardSkeleton";
-import { CardContent } from "../FrontEndUtils/CardContent";
-import { MyHelmet } from "../FrontEndUtils/MyHelmet";
-export interface IAltriProgettiProps {}
+import { CardSkeleton } from "../Components/Card/CardSkeleton";
+import { CardContent } from "../Components/Card/CardContent";
+import { MyHelmet } from "../Components/TitlePage/MyHelmet";
 
-export default function AltriProgetti(props: IAltriProgettiProps) {
+export interface IContactProps {}
+
+export default function Contact(props: IContactProps) {
   const [refresh, setRefresh] = useState(false);
 
   async function Refresh() {
@@ -19,18 +20,14 @@ export default function AltriProgetti(props: IAltriProgettiProps) {
   }, []);
   return (
     <React.Fragment>
-      <MyHelmet title={"Altri Progetti"} />
+      <MyHelmet title={"Contact"} />
       <Container
         maxWidth="md"
         disableGutters
         sx={{ display: refresh ? "block" : " none" }}
       >
         <Grid container spacing={2}>
-          <CardContent
-            imageUrl="/Portfolio.png"
-            alt="Altri Progetti"
-            title="Altri Progetti"
-          />
+          <CardContent imageUrl="/Contact.png" alt="Contact" title="Contact" />
         </Grid>
       </Container>
 

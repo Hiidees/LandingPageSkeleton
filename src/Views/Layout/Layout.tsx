@@ -1,13 +1,14 @@
 import { Container } from "@mui/material";
-import ParticlesComponent from "../../utils/ParticlesComponent";
-import { Footer } from "../Footer/Footer";
-import { MyAppBar } from "../Header/MyAppBar";
+import React from "react";
+import ParticlesComponent from "../Components/Particles/ParticlesComponent";
+import { Footer } from "./Footer/Footer";
+import { MyAppBar } from "./Header/MyAppBar";
 
 interface ILayoutProps {
   onClickHome: () => void;
   onClickDM: () => void;
   onClickMM: () => void;
-  onClickAltriProgetti: () => void;
+  onClickOtherProject: () => void;
   onClickContact: () => void;
   handleDrawerClick: (text: string) => void;
 }
@@ -17,18 +18,18 @@ export default function Layout(props: React.PropsWithChildren<ILayoutProps>) {
     onClickHome,
     onClickDM,
     onClickMM,
-    onClickAltriProgetti,
+    onClickOtherProject,
     onClickContact,
     handleDrawerClick,
   } = props;
   return (
-    <div>
+    <React.Fragment>
       <ParticlesComponent />
       <MyAppBar
         onClickHome={onClickHome}
         onClickDM={onClickDM}
         onClickMM={onClickMM}
-        onClickAltriProgetti={onClickAltriProgetti}
+        onClickOtherProject={onClickOtherProject}
         onClickContact={onClickContact}
         handleDrawerClick={handleDrawerClick}
       />
@@ -38,6 +39,6 @@ export default function Layout(props: React.PropsWithChildren<ILayoutProps>) {
       <footer>
         <Footer />
       </footer>
-    </div>
+    </React.Fragment>
   );
 }

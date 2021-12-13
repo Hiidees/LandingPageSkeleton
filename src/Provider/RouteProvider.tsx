@@ -3,8 +3,8 @@ import HomeProvider from "./PageProvider/HomeProvider";
 import React from "react";
 import DigitalMarketingProvider from "./PageProvider/DigitalMarketingProvider";
 import MicaMachoProvider from "./PageProvider/MicaMachoProvider";
-import AltriProgettiProvider from "./PageProvider/AltriProgettiProvider";
-import ContattiProvider from "./PageProvider/ContattiProvider";
+import OtherProjectProvider from "./PageProvider/OtherProjectProvider";
+import ContactProvider from "./PageProvider/ContactProvider";
 import NotFoundProvider from "./PageProvider/NotFoundProvider";
 
 export default function RouteProvider() {
@@ -19,12 +19,8 @@ export default function RouteProvider() {
             component={DigitalMarketingProvider}
           />
           <Route exact path="/micamacho" component={MicaMachoProvider} />
-          <Route
-            exact
-            path="/altriprogetti"
-            component={AltriProgettiProvider}
-          />
-          <Route exact path="/contatti" component={ContattiProvider} />
+          <Route exact path="/altriprogetti" component={OtherProjectProvider} />
+          <Route exact path="/contatti" component={ContactProvider} />
           <Route path="*" component={NotFoundProvider} />
         </Switch>
       </BrowserRouter>
