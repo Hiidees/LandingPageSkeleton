@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import TranslateIcon from "@mui/icons-material/Translate";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -16,6 +17,7 @@ import { TranslationContext } from "../../../Providers/AppProvider";
 import { ButtonAppBarStyle } from "../Styleds/HeaderStyle";
 
 import ListItemIcon from "@mui/material/ListItemIcon";
+import IconButton from "@mui/material/IconButton";
 
 export interface ILanguageDialogProps {
   onChangeTranslation: (languageCode: SupportedLangugesEnum) => void;
@@ -99,14 +101,15 @@ export default function LanguageDialog(props: ILanguageDialogProps) {
 
   return (
     <React.Fragment>
-      <Button
-        sx={ButtonAppBarStyle}
+      <IconButton
+        aria-label="Lingua"
         disableRipple
         color="inherit"
+        sx={ButtonAppBarStyle}
         onClick={() => handleClickOpen()}
       >
-        {translationState.translation["Language"]}
-      </Button>
+        <TranslateIcon />
+      </IconButton>
       <SimpleDialog
         selectedValue={selectedValue}
         open={open}

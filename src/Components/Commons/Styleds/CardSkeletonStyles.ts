@@ -29,12 +29,12 @@ export const LineSkeletonStyle = {
 } as const;
 
 export const ImageSkeletonStyle = {
-  margin: { xs: "0 auto", sm: 5 },
+  margin: { xs: "0 auto" },
   borderRadius: 5,
 } as const;
 
 export const GridSkeletonStyle = {
-  marginBottom: 4,
+  marginBottom: 2,
 } as const;
 
 // end Region

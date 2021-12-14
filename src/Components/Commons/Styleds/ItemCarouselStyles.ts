@@ -6,7 +6,7 @@ export const CardCarouselStyle = {
 } as const;
 
 export const ContainerImageCarouselStyle = {
-  container: (refresh: any) => {
+  container: (refresh: boolean) => {
     return {
       display: refresh ? "block" : " none",
     };
@@ -14,7 +14,7 @@ export const ContainerImageCarouselStyle = {
 } as const;
 
 export const ContainerSkeletonCarouselStyle = {
-  container: (refresh: any) => {
+  container: (refresh: boolean) => {
     return {
       display: refresh ? "none" : " block",
     };

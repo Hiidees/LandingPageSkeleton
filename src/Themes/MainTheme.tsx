@@ -21,7 +21,7 @@ export default createTheme({
           background: "transparent",
           boxShadow: "none",
           color: "#d1dffb",
-          marginBottom: 5,
+          marginBottom: 3,
           marginTop: 3,
         },
       },

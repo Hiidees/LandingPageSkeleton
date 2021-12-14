@@ -69,9 +69,6 @@ export const DividerVerticalDrawerStyle = {
 //end Drawer Region
 
 //AppBar Region
-export const BoxAppBarStyle = {
-  flexGrow: 1,
-} as const;
 
 export const ToolbarDesktopAppBarStyle = {
   justifyContent: "center",
