@@ -25,7 +25,11 @@ export default function Contact(props: IContactProps) {
   return (
     <React.Fragment>
       <MyHelmet title={"Contact"} />
-      <Container maxWidth="md" disableGutters sx={ContainerImageContactStyle}>
+      <Container
+        maxWidth="md"
+        disableGutters
+        sx={ContainerImageContactStyle.container(refresh)}
+      >
         <Grid container spacing={2}>
           <MyCardContent
             imageUrl="/Contact.png"
@@ -38,7 +42,7 @@ export default function Contact(props: IContactProps) {
       <Container
         maxWidth="md"
         disableGutters
-        sx={ContainerSkeletonContactStyle}
+        sx={ContainerSkeletonContactStyle.container(refresh)}
       >
         <Grid container spacing={2}>
           <CardSkeleton />
