@@ -12,7 +12,7 @@ ReactDOM.render(
       <GlobalStyles
         styles={{
           body: {
-            backgroundImage: "url(" + "/Blue.jpg" + ")",
+            backgroundImage: "url(/Blue.jpg )",
             backgroundRepeat: "no-repeat",
           },
         }}

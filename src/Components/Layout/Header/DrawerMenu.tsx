@@ -34,15 +34,18 @@ import { Box } from "@mui/system";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import IconButton from "@mui/material/IconButton";
-
-type Anchor = "left";
+import { TranslationContext } from "../../../Providers/AppProvider";
+import LanguageDialogMobile from "../../Commons/Dialogs/LanguageDialogMobile";
+import SupportedLangugesEnum from "../../../Commons/Enums";
 
 interface IDrawerMenu {
   handleDrawerClick: (text: string) => void;
+  onChangeTranslation: (languageCode: SupportedLangugesEnum) => void;
+  getTranslationKey: () => string;
 }
 
 export default function DrawerMenu(props: IDrawerMenu) {
-  const { handleDrawerClick } = props;
+  const { handleDrawerClick, onChangeTranslation, getTranslationKey } = props;
   const matches = useMediaQuery("(min-height:600px)");
 
   const [state, setState] = React.useState(false);
@@ -59,6 +62,8 @@ export default function DrawerMenu(props: IDrawerMenu) {
 
       setState(open);
     };
+
+  const translationState = React.useContext(TranslationContext);
 
   return (
     <div>
@@ -97,40 +102,76 @@ export default function DrawerMenu(props: IDrawerMenu) {
                 </ListItem>
               </List>
               <Divider variant="middle" sx={DividerRowDrawerStyle} />
+
               <List sx={ListLinkDrawerStyle}>
-                {[
-                  "Home",
-                  "Digital Marketing",
-                  "Mica Macho",
-                  "Altri Progetti",
-                  "Contatti",
-                ].map((text) => (
-                  <React.Fragment>
-                    <ListItemButton
-                      sx={ListButtonDrawerStyle}
-                      key={text}
-                      onClick={() => handleDrawerClick(text)}
-                      disableRipple
-                      disabled={
-                        window.location.pathname ===
-                        "/" +
-                          text
-                            .replace(/\s+/g, "")
-                            .toLowerCase()
-                            .replace("home", "")
-                      }
-                    >
-                      <ListItemIcon sx={ListItemIconDrawerStyle}>
-                        {text === "Home" && <HomeIcon />}
-                        {text === "Digital Marketing" && <CloudDoneIcon />}
-                        {text === "Mica Macho" && <LooksIcon />}
-                        {text === "Altri Progetti" && <LayersIcon />}
-                        {text === "Contatti" && <ContactsIcon />}
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
-                    </ListItemButton>
-                  </React.Fragment>
-                ))}
+                <ListItemButton
+                  sx={ListButtonDrawerStyle}
+                  onClick={() => handleDrawerClick("Home")}
+                  disableRipple
+                  disabled={window.location.pathname === "/"}
+                >
+                  <ListItemIcon sx={ListItemIconDrawerStyle}>
+                    <HomeIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Home"} />
+                </ListItemButton>
+
+                <ListItemButton
+                  sx={ListButtonDrawerStyle}
+                  onClick={() => handleDrawerClick("Digital Marketing")}
+                  disableRipple
+                  disabled={window.location.pathname === "/digitalmarketing"}
+                >
+                  <ListItemIcon sx={ListItemIconDrawerStyle}>
+                    <CloudDoneIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Digital Marketing"} />
+                </ListItemButton>
+
+                <ListItemButton
+                  sx={ListButtonDrawerStyle}
+                  onClick={() => handleDrawerClick("Mica Macho")}
+                  disableRipple
+                  disabled={window.location.pathname === "/micamacho"}
+                >
+                  <ListItemIcon sx={ListItemIconDrawerStyle}>
+                    <LooksIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Mica Macho"} />
+                </ListItemButton>
+
+                <ListItemButton
+                  sx={ListButtonDrawerStyle}
+                  onClick={() => handleDrawerClick("Altri Progetti")}
+                  disableRipple
+                  disabled={window.location.pathname === "/altriprogetti"}
+                >
+                  <ListItemIcon sx={ListItemIconDrawerStyle}>
+                    <LayersIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={translationState.translation["Other Project"]}
+                  />
+                </ListItemButton>
+
+                <ListItemButton
+                  sx={ListButtonDrawerStyle}
+                  onClick={() => handleDrawerClick("Contatti")}
+                  disableRipple
+                  disabled={window.location.pathname === "/contatti"}
+                >
+                  <ListItemIcon sx={ListItemIconDrawerStyle}>
+                    <ContactsIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={translationState.translation["Contact"]}
+                  />
+                </ListItemButton>
+
+                <LanguageDialogMobile
+                  onChangeTranslation={onChangeTranslation}
+                  getTranslationKey={getTranslationKey}
+                />
               </List>
 
               <List

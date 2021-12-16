@@ -42,7 +42,11 @@ export function MyAppBar(props: IAppBarProps) {
             getTranslationKey={getTranslationKey}
           />
         ) : (
-          <ToolbarMobile handleDrawerClick={handleDrawerClick} />
+          <ToolbarMobile
+            handleDrawerClick={handleDrawerClick}
+            onChangeTranslation={onChangeTranslation}
+            getTranslationKey={getTranslationKey}
+          />
         )}
       </AppBar>
     </React.Fragment>

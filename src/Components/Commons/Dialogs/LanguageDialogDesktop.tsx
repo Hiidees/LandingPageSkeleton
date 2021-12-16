@@ -1,21 +1,15 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
-import Avatar from "@mui/material/Avatar";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import TranslateIcon from "@mui/icons-material/Translate";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
-import PersonIcon from "@mui/icons-material/Person";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
-import { blue } from "@mui/material/colors";
 import SupportedLangugesEnum from "../../../Commons/Enums";
 import { TranslationContext } from "../../../Providers/AppProvider";
 import { ButtonAppBarStyle } from "../Styleds/HeaderStyle";
-
 import ListItemIcon from "@mui/material/ListItemIcon";
 import IconButton from "@mui/material/IconButton";
 
@@ -78,7 +72,7 @@ function SimpleDialog(props: SimpleDialogProps) {
   );
 }
 
-export default function LanguageDialog(props: ILanguageDialogProps) {
+export default function LanguageDialogDesktop(props: ILanguageDialogProps) {
   const { onChangeTranslation, getTranslationKey } = props;
 
   const translationState = React.useContext(TranslationContext);
