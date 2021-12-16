@@ -17,74 +17,78 @@ import {
   NavButtonsWrapperCarouselStyle,
   SkeletonCarouselStyle,
 } from "../Styleds/ItemCarouselStyles";
+import CardContent from "@mui/material/CardContent";
+import { Context } from "../../DigitalMarketing/DigitalMarketing";
 
 export interface IItemCarouselProps {
   items: Object[];
-  refresh: any;
 }
 
 export function ItemCarousel(props: IItemCarouselProps) {
-  const { items, refresh } = props;
+  const { items } = props;
+  const refresh = React.useContext(Context);
   return (
     <React.Fragment>
-      <Carousel
-        indicators={false}
-        animation={"slide"}
-        navButtonsAlwaysVisible={true}
-        interval={5000}
-        duration={800}
-        fullHeightHover={false}
-        navButtonsWrapperProps={{
-          style: NavButtonsWrapperCarouselStyle,
-        }}
-        navButtonsProps={{
-          style: NavButtonsCarouselStyle,
-        }}
-        PrevIcon={<ArrowBackIosNewIcon fontSize={"large"} />}
-        NextIcon={<ArrowForwardIosIcon fontSize={"large"} />}
-      >
-        {items.map((item, i) => (
-          <Item key={i} item={item} refresh={refresh} />
-        ))}
-      </Carousel>
+      <Card sx={CardCarouselStyle} elevation={0}>
+        <CardContent>
+          <Container
+            maxWidth="md"
+            disableGutters
+            sx={ContainerImageCarouselStyle.container(refresh.refresh)}
+          >
+            {console.log(refresh.refresh)}
+            <Carousel
+              indicators={false}
+              animation={"fade"}
+              navButtonsAlwaysVisible={true}
+              interval={5000}
+              duration={800}
+              fullHeightHover={false}
+              navButtonsWrapperProps={{
+                style: NavButtonsWrapperCarouselStyle,
+              }}
+              navButtonsProps={{
+                style: NavButtonsCarouselStyle,
+              }}
+              PrevIcon={<ArrowBackIosNewIcon fontSize={"large"} />}
+              NextIcon={<ArrowForwardIosIcon fontSize={"large"} />}
+            >
+              {items.map((item, i) => (
+                <Item key={i} item={item} />
+              ))}
+            </Carousel>
+          </Container>
+          <Container
+            maxWidth="md"
+            disableGutters
+            sx={ContainerSkeletonCarouselStyle.container(refresh.refresh)}
+          >
+            <Grid container spacing={2}>
+              <Skeleton
+                variant="rectangular"
+                width={450}
+                height={450}
+                sx={SkeletonCarouselStyle}
+              />
+            </Grid>
+          </Container>
+        </CardContent>
+      </Card>
     </React.Fragment>
   );
 }
 
 function Item(props: any) {
-  const { refresh } = props;
   return (
     <React.Fragment>
-      <Card sx={CardCarouselStyle} elevation={0}>
-        <Container
-          maxWidth="md"
-          disableGutters
-          sx={ContainerImageCarouselStyle.container(refresh)}
-        >
-          <Grid container spacing={2} sx={GridCarouselStyle}>
-            <Box
-              component="img"
-              sx={BoxCarouselStyle}
-              alt="The house from the offer."
-              src={props.item.ImageUrl}
-            />
-          </Grid>
-        </Container>
-        <Container
-          maxWidth="md"
-          disableGutters
-          sx={ContainerSkeletonCarouselStyle.container(refresh)}
-        >
-          <Grid container spacing={2}>
-            <Skeleton
-              variant="rectangular"
-              width={450}
-              height={450}
-              sx={SkeletonCarouselStyle}
-            />
-          </Grid>
-        </Container>
-      </Card>
+      <Grid container spacing={2} sx={GridCarouselStyle}>
+        <Box
+          component="img"
+          title="Carousel"
+          sx={BoxCarouselStyle}
+          src={props.item.ImageUrl}
+        />
+      </Grid>
     </React.Fragment>
   );
 }

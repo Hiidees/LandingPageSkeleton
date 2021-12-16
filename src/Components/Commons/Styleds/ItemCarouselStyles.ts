@@ -2,7 +2,6 @@
 
 export const CardCarouselStyle = {
   background: "transparent",
-  display: { xs: "block", sm: "flex" },
 } as const;
 
 export const ContainerImageCarouselStyle = {

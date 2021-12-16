@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
 import { ItemCarousel } from "../Commons/Carousel/ItemCarousel";
-import Container from "@mui/material/Container";
-import {
-  ContainerSkeletonCarouselStyle,
-  SkeletonCarouselStyle,
-} from "../Commons/Styleds/ItemCarouselStyles";
-import Grid from "@mui/material/Grid";
-import Skeleton from "@mui/material/Skeleton";
 
 export interface IDigitalMarketingProps {}
+
+interface IRefresh {
+  refresh: boolean;
+  setRefresh: (bool: boolean) => void;
+}
+
+export const Context = createContext({} as IRefresh);
 
 export default function DigitalMarketing(props: IDigitalMarketingProps) {
   const [refresh, setRefresh] = useState(false);
@@ -37,7 +37,9 @@ export default function DigitalMarketing(props: IDigitalMarketingProps) {
   return (
     <React.Fragment>
       <MyHelmet title={"Digital Marketing"} />
-      <ItemCarousel items={items} refresh={refresh} />
+      <Context.Provider value={{ refresh, setRefresh }}>
+        <ItemCarousel items={items} />
+      </Context.Provider>
     </React.Fragment>
   );
 }

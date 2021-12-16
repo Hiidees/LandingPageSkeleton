@@ -4,6 +4,10 @@ import React, { useEffect, useState } from "react";
 import { MyCardContent } from "../Commons/Card/MyCardContent";
 import { CardSkeleton } from "../Commons/Card/CardSkeleton";
 import { MyHelmet } from "../Commons/TitlePage/MyHelmet";
+import {
+  ContainerImageContactStyle,
+  ContainerSkeletonContactStyle,
+} from "../Commons/Styleds/ContactStyles";
 
 export interface IContactProps {}
 
@@ -21,11 +25,7 @@ export default function Contact(props: IContactProps) {
   return (
     <React.Fragment>
       <MyHelmet title={"Contact"} />
-      <Container
-        maxWidth="md"
-        disableGutters
-        sx={{ display: refresh ? "block" : " none" }}
-      >
+      <Container maxWidth="md" disableGutters sx={ContainerImageContactStyle}>
         <Grid container spacing={2}>
           <MyCardContent
             imageUrl="/Contact.png"
@@ -38,7 +38,7 @@ export default function Contact(props: IContactProps) {
       <Container
         maxWidth="md"
         disableGutters
-        sx={{ display: refresh ? "none" : " block" }}
+        sx={ContainerSkeletonContactStyle}
       >
         <Grid container spacing={2}>
           <CardSkeleton />
