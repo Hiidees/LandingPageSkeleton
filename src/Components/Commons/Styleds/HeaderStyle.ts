@@ -22,7 +22,7 @@ export const ButtonDrawerStyle = {
   display: { sm: "none", md: "none" },
   "&:hover": {
     background: "none",
-    color: "#042057",
+    color: "#8b46fa",
   },
 } as const;
 
